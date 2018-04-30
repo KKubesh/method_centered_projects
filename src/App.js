@@ -7,8 +7,6 @@ import {
 } from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import LoginPage from './components/LoginPage/LoginPage';
-import RegisterPage from './components/RegisterPage/RegisterPage';
 import UserPage from './components/UserPage/UserPage';
 import InfoPage from './components/InfoPage/InfoPage';
 import Main from './components/Main/Main';
@@ -25,10 +23,10 @@ const App = () => (
           path="/home"
           component={Main}
         />
-        <Route
+        {/* <Route
           path="/register"
           component={RegisterPage}
-        />
+        /> */}
         <Route
           path="/user"
           component={UserPage}
@@ -37,10 +35,10 @@ const App = () => (
           path="/info"
           component={InfoPage}
         />
-        <Route
+        {/* <Route
           path="/login"
           component={LoginPage}
-        />
+        /> */}
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
 

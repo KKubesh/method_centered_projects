@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import LoginPage from '../LoginPage/LoginPage';
 
@@ -25,32 +24,17 @@ class LoginDialog extends Component {
     };
 
     render() {
-        const actions = [
-            <FlatButton
-            label="Cancel"
-            primary={true}
-            onClick={this.handleClose}
-            />,
-            <FlatButton
-            label="Submit"
-            primary={true}
-            disabled={true}
-            onClick={this.handleClose}
-            />,
-        ];
-
         return (
             <div>
-                <RaisedButton label="Login" onClick={this.handleOpen} />
+                <RaisedButton label="Sign In" onClick={this.handleOpen} />
                 <Dialog
-                    title="Login"
-                    actions={actions}
-                    modal={true}
+                    title="Sign In"
+                    modal={false}
                     open={this.state.open}
                     contentStyle={loginStyling}
                 >
                 Sign in to manage your content.
-                <LoginPage/>
+                <LoginPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>
         );

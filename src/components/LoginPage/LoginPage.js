@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
+import FlatButton from 'material-ui/FlatButton';
 
 
 const mapStateToProps = state => ({
@@ -87,12 +88,17 @@ class LoginPage extends Component {
             </label>
           </div>
           <div>
-            <input
+            <FlatButton
               type="submit"
               name="submit"
-              value="Log In"
+              label="Submit"
+              primary={true}
             />
-            <Link to="/register">Register</Link>
+            <FlatButton
+              label="Cancel"
+              primary={true}
+              onClick={this.props.handleClose}
+            />
           </div>
         </form>
       </div>
@@ -100,4 +106,6 @@ class LoginPage extends Component {
   }
 }
 
-export default connect(mapStateToProps)(LoginPage);
+const routerLoginPage = withRouter(LoginPage)
+
+export default connect(mapStateToProps)(routerLoginPage);

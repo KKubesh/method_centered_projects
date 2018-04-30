@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Nav from '../../components/Nav/Nav';
-
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
@@ -44,7 +42,10 @@ class UserPage extends Component {
           <div>
             Long paragraph of explaination on how to user this stuff in the user's page.
           </div>
-          {/* <UserMethod /> */}
+          <div>
+            List of methods
+            {/* <UserMethod /> */}
+          </div>
         </div>
       );
     }

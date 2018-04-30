@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import LoginPage from '../RegisterPage/RegisterPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 const loginStyling = {
@@ -26,32 +24,17 @@ class LoginDialog extends Component {
     };
 
     render() {
-        const actions = [
-            <FlatButton
-            label="Cancel"
-            primary={true}
-            onClick={this.handleClose}
-            />,
-            <FlatButton
-            label="Submit"
-            primary={true}
-            disabled={true}
-            onClick={this.handleClose}
-            />,
-        ];
-
         return (
             <div>
                 <RaisedButton label="Register" onClick={this.handleOpen} />
                 <Dialog
                     title="Register"
-                    actions={actions}
-                    modal={true}
+                    modal={false}
                     open={this.state.open}
                     contentStyle={loginStyling}
                 >
                 Create account to manage your content.
-                <RegisterPage/>
+                <RegisterPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>
         );

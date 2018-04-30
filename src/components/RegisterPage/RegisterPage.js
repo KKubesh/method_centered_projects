@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import FlatButton from 'material-ui/FlatButton';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -73,7 +74,6 @@ class RegisterPage extends Component {
       <div>
         {this.renderAlert()}
         <form onSubmit={this.registerUser}>
-          <h1>Register User</h1>
           <div>
             <label htmlFor="username">
               Username:
@@ -97,12 +97,18 @@ class RegisterPage extends Component {
             </label>
           </div>
           <div>
-            <input
+            <FlatButton
               type="submit"
               name="submit"
-              value="Register"
+              label="Submit"
+              primary={true}
+              onClick={this.props.handleClose}
             />
-            <Link to="/home">Cancel</Link>
+            <FlatButton
+              label="Cancel"
+              primary={true}
+              onClick={this.props.handleClose}
+            />
           </div>
         </form>
       </div>
@@ -110,5 +116,7 @@ class RegisterPage extends Component {
   }
 }
 
-export default RegisterPage;
+const routerRegisterPage = withRouter(RegisterPage);
+
+export default routerRegisterPage;
 

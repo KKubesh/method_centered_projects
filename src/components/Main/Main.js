@@ -15,6 +15,7 @@ class Main extends Component {
                     <RegisterDialog />
                 </div>
                 <div>
+                    List of methods
                     {/* <HomeMethods/> */}
                 </div>
             </div>
