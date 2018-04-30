@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginDialog from '../LoginDialog/LoginDialog';
 import RegisterDialog from '../RegisterDialog/RegisterDialog';
+import HomeMethods from '../HomeMethods/HomeMethods';
 
 class Main extends Component {
 
@@ -16,7 +17,7 @@ class Main extends Component {
                 </div>
                 <div>
                     List of methods
-                    {/* <HomeMethods/> */}
+                    <HomeMethods/>
                 </div>
             </div>
         )
