@@ -10,6 +10,11 @@ import reducer from './redux/reducers';
 import App from './App';
 import rootSaga from './redux/sagas';
 
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+
 // Initializing to an empty object, but here is where you could
 // preload your redux state with initial values (from localStorage, perhaps)
 const preloadedState = {};
@@ -31,7 +36,9 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <App />
+    </MuiThemeProvider>
   </Provider>,
   document.getElementById('react-root'),
 );
