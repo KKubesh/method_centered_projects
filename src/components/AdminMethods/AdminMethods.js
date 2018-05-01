@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MethodItem from '../MethodItem/MethodItem';
+import AdminMethodItem from '../AdminMethodItem/AdminMethodItem';
 
 const mapStateToProps = state => ({
     state,
 });
 
-class HomeMethods extends Component {
+class AdminMethods extends Component {
     componentDidMount() {
         // use component did mount to dispatch an action to request the methodsList from the API
         this.props.dispatch({
@@ -18,16 +18,17 @@ class HomeMethods extends Component {
         console.log(this.props.state.method);
         let methods = this.props.state.method.map(method => {
             return (
-                <MethodItem key={method.id} method={method}/>
+                <AdminMethodItem key={method.id} method={method}/>
             )
         })
         
         return(
             <div>
+                <h1>Admin Methods</h1>
                 {methods}
             </div>
         )
     }
 }
 
-export default connect(mapStateToProps)(HomeMethods);
+export default connect(mapStateToProps)(AdminMethods);
