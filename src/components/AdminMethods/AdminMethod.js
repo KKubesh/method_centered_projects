@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MethodItem from '../HomeMethodItem/HomeMethodItem';
+import MethodItem from '../MethodItem/MethodItem';
 
 const mapStateToProps = state => ({
     state,

@@ -40,7 +40,8 @@ class AdminPage extends Component {
             </button>
           </div>
           <div>
-            Long paragraph of explaination on how to use this stuff in the admin's page.
+            <p>Long paragraph of explaination on how to use this stuff in the admin's page.</p>
+            <button>New Method</button>
           </div>
           <div>
             List of methods

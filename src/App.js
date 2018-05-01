@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import UserPage from './components/UserPage/UserPage';
 import InfoPage from './components/InfoPage/InfoPage';
 import Main from './components/Main/Main';
+import AdminPage from './components/AdminPage/AdminPage';
 
 import './styles/main.css';
 
@@ -23,10 +24,10 @@ const App = () => (
           path="/home"
           component={Main}
         />
-        {/* <Route
-          path="/register"
-          component={RegisterPage}
-        /> */}
+        <Route
+          path="/admin"
+          component={AdminPage}
+        />
         <Route
           path="/user"
           component={UserPage}
@@ -35,10 +36,6 @@ const App = () => (
           path="/info"
           component={InfoPage}
         />
-        {/* <Route
-          path="/login"
-          component={LoginPage}
-        /> */}
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
 
