@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
-class UserPage extends Component {
+class AdminPage extends Component {
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
   }
@@ -40,7 +40,7 @@ class UserPage extends Component {
             </button>
           </div>
           <div>
-            Long paragraph of explaination on how to use this stuff in the user's page.
+            Long paragraph of explaination on how to use this stuff in the admin's page.
           </div>
           <div>
             List of methods
@@ -59,5 +59,5 @@ class UserPage extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStateToProps)(AdminPage);
 

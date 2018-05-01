@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import MethodItem from '../MethodItem/MethodItem';
 
 const mapStateToProps = state => ({
     state,
@@ -14,9 +15,16 @@ class HomeMethods extends Component {
     }
 
     render() {
+        console.log(this.props.state.method);
+        let methods = this.props.state.method.map(method => {
+            return (
+                <MethodItem key={method.id} method={method}/>
+            )
+        })
+        
         return(
             <div>
-                This is where where we will make all the cards of each method
+                {methods}
             </div>
         )
     }
