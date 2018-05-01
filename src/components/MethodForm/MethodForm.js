@@ -14,13 +14,25 @@ class MethodForm extends Component {
     super(props);
 
     this.state = {
-      title: '',
-      statements: '',
+        title: '',
+        statements: '',
+        description: '',
+	    time_amount: '',
+	    diffculty: '',
+	    need: '',
+	    participants: '',
+        steps: '',
+        image: '',
     };
   }
 
   componentDidMount() {
     
+  }
+
+  newMethod = (event) => {
+    event.preventDefault();
+    this.props.dispatch({ type: 'ADD_METHOD', payload: this.state })
   }
 
   handleChangeFor = propertyName => (event) => {
@@ -32,7 +44,7 @@ class MethodForm extends Component {
   render() {
     return (
         <div>
-            <form onSubmit={this.login}>
+            <form onSubmit={this.newMethod}>
                 <div>
                     Title:
                     <input
@@ -40,6 +52,20 @@ class MethodForm extends Component {
                         name="title"
                         value={this.state.title}
                         onChange={this.handleChangeFor('title')}
+                    />
+                    Time:
+                    <input
+                        type="text"
+                        name="time_amount"
+                        value={this.state.time_amount}
+                        onChange={this.handleChangeFor('time_amount')}
+                    />
+                    Diffculty:
+                    <input
+                        type="text"
+                        name="diffculty"
+                        value={this.state.diffculty}
+                        onChange={this.handleChangeFor('diffculty')}
                     />
                 </div>
                 <div>
@@ -49,6 +75,51 @@ class MethodForm extends Component {
                         name="statements"
                         value={this.state.statements}
                         onChange={this.handleChangeFor('statements')}
+                    />
+                </div>
+                <div>
+                    Description:
+                    <input
+                        type="text"
+                        name="description"
+                        value={this.state.description}
+                        onChange={this.handleChangeFor('description')}
+                    />
+                </div>
+                <div>
+                    Items needed:
+                    <input
+                        type="text"
+                        name="need"
+                        value={this.state.need}
+                        onChange={this.handleChangeFor('need')}
+                    />
+                </div>
+                <div>
+                    Participants:
+                    <input
+                        type="text"
+                        name="participants"
+                        value={this.state.participants}
+                        onChange={this.handleChangeFor('participants')}
+                    />
+                </div>
+                <div>
+                    Steps:
+                    <input
+                        type="text"
+                        name="steps"
+                        value={this.state.steps}
+                        onChange={this.handleChangeFor('steps')}
+                    />
+                </div>
+                <div>
+                    Icon:
+                    <input
+                        type="text"
+                        name="image"
+                        value={this.state.image}
+                        onChange={this.handleChangeFor('image')}
                     />
                 </div>
                 <div>

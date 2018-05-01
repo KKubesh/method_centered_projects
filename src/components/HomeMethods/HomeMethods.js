@@ -10,7 +10,7 @@ class HomeMethods extends Component {
     componentDidMount() {
         // use component did mount to dispatch an action to request the methodsList from the API
         this.props.dispatch({
-            type: 'GET_METHODS'
+            type: 'GET_METHOD'
         })
     }
 
