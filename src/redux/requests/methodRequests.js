@@ -6,8 +6,8 @@ export function callGetMethod() {
         .catch(error => { throw error.response || error; });
 }
 
-export function callAddMethod() {
-    return axios.post('api/method')
+export function callAddMethod(action) {
+    return axios.post('api/method', action.payload)
     .then((response) => response.data)
     .catch(error => { throw error.reponse || error; });
 }

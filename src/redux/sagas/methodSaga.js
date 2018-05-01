@@ -1,6 +1,5 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { callGetMethod, callAddMethod } from '../requests/methodRequests';
-import LoginDialog from '../../components/NewMethodDialog/NewMethodDialog';
 
 function* methodSaga() {
   console.log('root saga loaded');
@@ -23,12 +22,11 @@ function* getMethodSaga() {
     }
 }
 
-function* postMethodSaga() {
+function* postMethodSaga(action) {
   try {
-      const addMethod = yield callAddMethod();
+      const addMethod = yield callAddMethod(action);
       yield put({
-        type: 'ADD_METHOD',
-        payload: addMethod,
+        type: 'GET_METHOD',
       });
     } catch (error) {
       yield put({
