@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class HomeMethodItem extends Component {
+class AdminMethodItem extends Component {
     
     render() {
     console.log(this.props.method.title);
@@ -11,9 +11,11 @@ class HomeMethodItem extends Component {
             <div>
                 <h1>{this.props.method.image}</h1>
                 <img src={imgMethod}/>
+                <button>more</button>
+                <button>buttons</button>
             </div>
         )
     }
 }
 
-export default HomeMethodItem;
+export default AdminMethodItem;

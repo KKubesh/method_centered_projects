@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
+import AdminMethods from '../AdminMethods/AdminMethods';
+import NewMethodDialog from '../NewMethodDialog/NewMethodDialog'
+
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -41,11 +44,11 @@ class AdminPage extends Component {
           </div>
           <div>
             <p>Long paragraph of explaination on how to use this stuff in the admin's page.</p>
-            <button>New Method</button>
+            <NewMethodDialog />
           </div>
           <div>
             List of methods
-            {/* <UserMethod /> */}
+            <AdminMethods />
           </div>
         </div>
       );

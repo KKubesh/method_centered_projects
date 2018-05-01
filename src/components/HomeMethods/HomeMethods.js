@@ -24,6 +24,7 @@ class HomeMethods extends Component {
         
         return(
             <div>
+                <h1>Home Methods</h1>
                 {methods}
             </div>
         )
