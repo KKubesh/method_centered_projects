@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { GridList } from 'material-ui/GridList';
 import MethodItem from '../HomeMethodItem/HomeMethodItem';
+
+const styles = {
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+    },
+    gridList: {
+      width: 960,
+      height: 960,
+      overflowY: 'auto',
+    },
+  };
 
 const mapStateToProps = state => ({
     state,
@@ -23,9 +37,14 @@ class HomeMethods extends Component {
         })
         
         return(
-            <div>
-                <h1>Home Methods</h1>
-                {methods}
+            <div style={styles.root}>
+                <GridList 
+                    cols={3}
+                    cellHeight={320}                   
+                    style={styles.gridList}
+                >
+                    {methods}
+                </GridList>
             </div>
         )
     }
