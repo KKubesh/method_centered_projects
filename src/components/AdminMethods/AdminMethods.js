@@ -4,11 +4,6 @@ import { GridList } from 'material-ui/GridList';
 import AdminMethodItem from '../AdminMethodItem/AdminMethodItem';
 
 const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    },
     gridList: {
         width: 960,
         height: 960,
@@ -37,7 +32,7 @@ class AdminMethods extends Component {
         })
         
         return(
-            <div style={styles.root}>
+            <div>
                 <GridList 
                     cols={3}
                     cellHeight={320}                   
