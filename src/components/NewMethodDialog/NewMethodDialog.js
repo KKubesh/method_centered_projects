@@ -30,6 +30,7 @@ class LoginDialog extends Component {
                     title="New Method"
                     modal={false}
                     open={this.state.open}
+                    onClick={this.handleOpen}
                     contentStyle={dialogStyling}
                 >
                 Sign in to manage your content.

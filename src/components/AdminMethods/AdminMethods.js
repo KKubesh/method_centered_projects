@@ -32,7 +32,7 @@ class AdminMethods extends Component {
         })
         
         return(
-            <div>
+            <div style={styles.root}>
                 <GridList 
                     cols={3}
                     cellHeight={320}                   

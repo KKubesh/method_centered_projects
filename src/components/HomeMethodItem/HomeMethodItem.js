@@ -4,12 +4,11 @@ import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
 import AddMethodIcon from 'material-ui/svg-icons/av/library-add';
 
-const dialogStyling = {
-    width: '80%',
-    minWidth: '300px'
-};
-
 const styles = {
+    dialogStyling: {
+        width: '80%',
+        minWidth: '300px'
+    },
     root: {
         display: 'flex',
         flexWrap: 'wrap',
@@ -31,9 +30,6 @@ class HomeMethodItem extends Component {
     };
     
     render() {
-    console.log(this.props.method.title);
-        const imgMethod = `imagepath`
-    
         
         return(
             <div style={styles.root}>
@@ -50,7 +46,7 @@ class HomeMethodItem extends Component {
                     title={this.props.method.title}
                     modal={false}
                     open={this.state.open}
-                    contentStyle={dialogStyling}
+                    contentStyle={styles.dialogStyling}
                     onRequestClose={this.handleClose}
                 >
                 <img height="250" width="250" src={this.props.method.image}/>
