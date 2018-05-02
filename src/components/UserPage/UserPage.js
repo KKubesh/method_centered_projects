@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
+import UserMethods from '../UserMethods/UserMethods';
+import ProjectList from '../ProjectList/ProjectList';
+
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -39,12 +42,13 @@ class UserPage extends Component {
               Log Out
             </button>
           </div>
+          <ProjectList />
           <div>
-            Long paragraph of explaination on how to use this stuff in the user's page.
+            <p>Long paragraph of explaination on how to use this stuff in the User's page.</p>
           </div>
           <div>
             List of methods
-            {/* <UserMethod /> */}
+            <UserMethods />
           </div>
         </div>
       );
@@ -60,4 +64,3 @@ class UserPage extends Component {
 
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(UserPage);
-
