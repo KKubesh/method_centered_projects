@@ -5,16 +5,16 @@ import MethodItem from '../HomeMethodItem/HomeMethodItem';
 
 const styles = {
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
     },
     gridList: {
-      width: 960,
-      height: 960,
-      overflowY: 'auto',
+        width: 960,
+        height: 960,
+        overflowY: 'auto',
     },
-  };
+};
 
 const mapStateToProps = state => ({
     state,
