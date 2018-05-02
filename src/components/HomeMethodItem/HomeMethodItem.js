@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import AddMethodIcon from 'material-ui/svg-icons/av/library-add'
+import AddMethodIcon from 'material-ui/svg-icons/av/library-add';
 
 class HomeMethodItem extends Component {
     
