@@ -9,9 +9,6 @@ const mapStateToProps = state => ({
 });
 
 class Main extends Component {
-    componentDidMount() {
-        this.props.dispatch({ type: "GET_METHOD" });
-    }
 
     render() {
         console.log('MAIN LOADED');
