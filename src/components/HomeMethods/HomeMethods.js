@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { GridList } from 'material-ui/GridList';
 import MethodItem from '../HomeMethodItem/HomeMethodItem';
 
 const styles = {
@@ -38,13 +37,7 @@ class HomeMethods extends Component {
         
         return(
             <div style={styles.root}>
-                <GridList 
-                    cols={3}
-                    cellHeight={320}                   
-                    style={styles.gridList}
-                >
                     {methods}
-                </GridList>
             </div>
         )
     }

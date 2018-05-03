@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
 import LoginPage from '../LoginPage/LoginPage';
-
-const loginStyling = {
-    width: '100%',
-    minWidth: '200px',
-    maxWidth: '300px'
-};
 
 class LoginDialog extends Component {
 
@@ -26,15 +20,10 @@ class LoginDialog extends Component {
     render() {
         return (
             <div>
-                <RaisedButton label="Sign In" onClick={this.handleOpen} />
-                <Dialog
-                    title="Sign In"
-                    modal={false}
-                    open={this.state.open}
-                    contentStyle={loginStyling}
-                >
-                Sign in to manage your content.
-                <LoginPage handleClose={this.handleClose}/>
+                <Button label="Sign In" onClick={this.handleOpen}>Sign In</Button>
+                <Dialog open={this.state.open} onClose={this.handleClose}>
+                    <DialogTitle> Sign in to manage your content.</DialogTitle>
+                    <LoginPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>
         );

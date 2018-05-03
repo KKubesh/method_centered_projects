@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
-import AddMethodIcon from 'material-ui/svg-icons/av/library-add';
+import Icon from 'material-ui/Icon';
 
 const styles = {
     dialogStyling: {
@@ -34,21 +33,11 @@ class AdminMethodItem extends Component {
         
         return(
             <div style={styles.root}>
-                <GridTile key={this.props.method.id}
-                    titlePosition="top"
-                    title={this.props.method.title}
-                    subtitle={<span><b>{this.props.method.description}</b></span>}
-                    actionIcon={<IconButton><AddMethodIcon color="white" /></IconButton>}
-                    onClick={this.handleOpen}                    
-                >
-                    <img alt="method" height="250" width="250" src={this.props.method.image}/>
-                </GridTile>
+                    <img onClick={this.handleOpen} alt="method" height="250" width="250" src={this.props.method.image}/>
                 <Dialog
                     title={this.props.method.title}
-                    modal={false}
                     open={this.state.open}
-                    contentStyle={styles.dialogStyling}
-                    onRequestClose={this.handleClose}
+                    onClose={this.handleClose}
                 >
                 <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 <p>This is the existing method for the admin editing. Keep on writing more stuff and add more stuff in here. </p>

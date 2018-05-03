@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 
 const mapStateToProps = state => ({
@@ -121,17 +121,19 @@ class MethodForm extends Component {
                     />
                 </div>
                 <div>
-                    <FlatButton
+                    <Button
                         type="submit"
                         name="submit"
                         label="Submit"
-                        primary={true}
-                    />
-                    <FlatButton
+                    >
+                        Submit
+                    </Button>
+                    <Button
                         label="Cancel"
-                        primary={true}
                         onClick={this.props.handleClose}
-                    />
+                    >
+                        Cancel
+                    </Button>
                 </div>
             </form>
         </div>
