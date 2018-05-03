@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
-import FlatButton from 'material-ui/FlatButton';
+import Button from 'material-ui/Button';
 
 
 const mapStateToProps = state => ({
@@ -88,17 +88,19 @@ class LoginPage extends Component {
             </label>
           </div>
           <div>
-            <FlatButton
+            <Button
               type="submit"
               name="submit"
               label="Submit"
-              primary={true}
-            />
-            <FlatButton
+            >
+              Sign In
+            </Button>
+            <Button
               label="Cancel"
-              primary={true}
               onClick={this.props.handleClose}
-            />
+            >
+              Cancel
+            </Button>
           </div>
         </form>
       </div>

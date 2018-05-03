@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { GridList } from 'material-ui/GridList';
 import AdminMethodItem from '../AdminMethodItem/AdminMethodItem';
 
 const styles = {
@@ -38,13 +37,7 @@ class AdminMethods extends Component {
         
         return(
             <div style={styles.root}>
-                <GridList 
-                    cols={3}
-                    cellHeight={320}                   
-                    style={styles.gridList}
-                >
                     {methods}
-                </GridList>
             </div>
         )
     }

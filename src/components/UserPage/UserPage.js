@@ -6,6 +6,7 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 
 import UserMethods from '../UserMethods/UserMethods';
 import ProjectList from '../ProjectList/ProjectList';
+import Button from 'material-ui/Button';
 
 
 const mapStateToProps = state => ({
@@ -38,9 +39,9 @@ class UserPage extends Component {
             <h1 id="welcome">
               Welcome, { this.props.user.userName }!
             </h1>
-            <button onClick={this.logout}>
+            <Button onClick={this.logout}>
               Log Out
-            </button>
+            </Button>
           </div>
           <ProjectList />
           <div>

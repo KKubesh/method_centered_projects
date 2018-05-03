@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
 import MethodForm from '../MethodForm/MethodForm';
 
 const dialogStyling = {
@@ -25,15 +25,9 @@ class LoginDialog extends Component {
     render() {
         return (
             <div>
-                <RaisedButton label="New Method" onClick={this.handleOpen} />
-                <Dialog
-                    title="New Method"
-                    modal={false}
-                    open={this.state.open}
-                    onClick={this.handleOpen}
-                    contentStyle={dialogStyling}
-                >
-                Sign in to manage your content.
+                <Button label="New Method" onClick={this.handleOpen}>New Method</Button>
+                <Dialog open={this.state.open} onClose={this.handleClose}>
+                <DialogTitle>Create New Method</DialogTitle>
                 <MethodForm handleClose={this.handleClose}/>
                 </Dialog>
             </div>

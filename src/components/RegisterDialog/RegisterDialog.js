@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import Dialog from 'material-ui/Dialog';
-import RaisedButton from 'material-ui/RaisedButton';
+import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import Button from 'material-ui/Button';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
-const loginStyling = {
-    width: '100%',
-    minWidth: '200px',
-    maxWidth: '300px'
-};
 
 class LoginDialog extends Component {
 
@@ -26,14 +20,9 @@ class LoginDialog extends Component {
     render() {
         return (
             <div>
-                <RaisedButton label="Register" onClick={this.handleOpen} />
-                <Dialog
-                    title="Register"
-                    modal={false}
-                    open={this.state.open}
-                    contentStyle={loginStyling}
-                >
-                Create account to manage your content.
+                <Button label="Register" onClick={this.handleOpen}>Register</Button>
+                <Dialog open={this.state.open} onClose={this.handleClose}>
+                <DialogTitle>Create account to manage your content.</DialogTitle>
                 <RegisterPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>

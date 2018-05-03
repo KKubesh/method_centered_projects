@@ -5,7 +5,8 @@ import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
 import AdminMethods from '../AdminMethods/AdminMethods';
-import NewMethodDialog from '../NewMethodDialog/NewMethodDialog'
+import NewMethodDialog from '../NewMethodDialog/NewMethodDialog';
+import Button from 'material-ui/Button';
 
 
 const mapStateToProps = state => ({
@@ -38,9 +39,9 @@ class AdminPage extends Component {
             <h1 id="welcome">
               Welcome, { this.props.user.userName }!
             </h1>
-            <button onClick={this.logout}>
+            <Button onClick={this.logout}>
               Log Out
-            </button>
+            </Button>
           </div>
           <div>
             <p>Long paragraph of explaination on how to use this stuff in the admin's page.</p>
