@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 import LoginDialog from '../LoginDialog/LoginDialog';
 import RegisterDialog from '../RegisterDialog/RegisterDialog';
 import HomeMethods from '../HomeMethods/HomeMethods';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+    state,
+});
 
 class Main extends Component {
+    componentDidMount() {
+        this.props.dispatch({ type: "GET_METHOD" });
+    }
 
     render() {
+        console.log('MAIN LOADED');
+        
         return(
             <div>
                 <div>
@@ -24,4 +34,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default connect(mapStateToProps)(Main);
