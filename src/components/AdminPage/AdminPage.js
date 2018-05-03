@@ -64,4 +64,3 @@ class AdminPage extends Component {
 
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(AdminPage);
-

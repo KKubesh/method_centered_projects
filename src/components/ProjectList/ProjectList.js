@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
-import DelMethodIcon from 'material-ui/svg-icons/action/delete-forever';
+import AddMethodIcon from 'material-ui/svg-icons/av/library-add';
 
 const styles = {
     dialogStyling: {
@@ -16,7 +16,7 @@ const styles = {
     }
 }
 
-class AdminMethodItem extends Component {
+class ProjectList extends Component {
 
     state = {
         open: false,
@@ -29,23 +29,20 @@ class AdminMethodItem extends Component {
     handleClose = () => {
         this.setState({open: false});
     };
-
-    handleClick = () => {
-        this.delMethod(this.props.method)
-    }
     
     render() { 
         
         return(
             <div style={styles.root}>
-                <GridTile key={this.props.method.id}
+                <h1>Project Project</h1>
+                {/* <GridTile key={this.props.method.id}
                     titlePosition="top"
                     title={this.props.method.title}
                     subtitle={<span><b>{this.props.method.description}</b></span>}
-                    actionIcon={<IconButton><DelMethodIcon color="white" /></IconButton>}
+                    actionIcon={<IconButton><AddMethodIcon color="white" /></IconButton>}
                     onClick={this.handleOpen}                    
                 >
-                    <img alt="method" height="250" width="250" src={this.props.method.image}/>
+                    <img height="250" width="250" src={this.props.method.image}/>
                 </GridTile>
                 <Dialog
                     title={this.props.method.title}
@@ -54,12 +51,12 @@ class AdminMethodItem extends Component {
                     contentStyle={styles.dialogStyling}
                     onRequestClose={this.handleClose}
                 >
-                <img alt="method" height="250" width="250" src={this.props.method.image}/>
+                <img height="250" width="250" src={this.props.method.image}/>
                 <p>This is the existing method for the admin editing. Keep on writing more stuff and add more stuff in here. </p>
-                </Dialog>
+                </Dialog> */}
             </div>
         )
     }
 }
 
-export default AdminMethodItem;
+export default ProjectList;

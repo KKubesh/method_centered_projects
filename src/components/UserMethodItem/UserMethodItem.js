@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
-import DelMethodIcon from 'material-ui/svg-icons/action/delete-forever';
+import AddMethodIcon from 'material-ui/svg-icons/av/library-add';
 
 const styles = {
     dialogStyling: {
@@ -29,10 +29,6 @@ class AdminMethodItem extends Component {
     handleClose = () => {
         this.setState({open: false});
     };
-
-    handleClick = () => {
-        this.delMethod(this.props.method)
-    }
     
     render() { 
         
@@ -42,7 +38,7 @@ class AdminMethodItem extends Component {
                     titlePosition="top"
                     title={this.props.method.title}
                     subtitle={<span><b>{this.props.method.description}</b></span>}
-                    actionIcon={<IconButton><DelMethodIcon color="white" /></IconButton>}
+                    actionIcon={<IconButton><AddMethodIcon color="white" /></IconButton>}
                     onClick={this.handleOpen}                    
                 >
                     <img alt="method" height="250" width="250" src={this.props.method.image}/>
