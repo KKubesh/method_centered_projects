@@ -3,6 +3,7 @@ import { GridTile } from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
 import DelMethodIcon from 'material-ui/svg-icons/action/delete-forever';
+import { connect } from 'react-redux';
 
 const styles = {
     dialogStyling: {
@@ -15,6 +16,10 @@ const styles = {
         justifyContent: 'space-around',
     }
 }
+
+const mapStateToProps = state => ({
+    state,
+});
 
 class AdminMethodItem extends Component {
 
@@ -33,6 +38,13 @@ class AdminMethodItem extends Component {
     handleClick = () => {
         this.delMethod(this.props.method)
     }
+
+    delMethod = () => {
+        this.props.dispatch({
+            type: 'DEL_METHOD',
+            payload: this.props.method
+        })
+    } 
     
     render() { 
         
@@ -42,10 +54,10 @@ class AdminMethodItem extends Component {
                     titlePosition="top"
                     title={this.props.method.title}
                     subtitle={<span><b>{this.props.method.description}</b></span>}
-                    actionIcon={<IconButton><DelMethodIcon color="white" /></IconButton>}
-                    onClick={this.handleOpen}                    
+                    actionIcon={<IconButton><DelMethodIcon onClick={this.handleClick} color="white" /></IconButton>}
+                    onClick={this.handleOpen}
                 >
-                    <img alt="method" height="250" width="250" src={this.props.method.image}/>
+                        <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 </GridTile>
                 <Dialog
                     title={this.props.method.title}
@@ -62,4 +74,4 @@ class AdminMethodItem extends Component {
     }
 }
 
-export default AdminMethodItem;
+export default connect(mapStateToProps)(AdminMethodItem);
