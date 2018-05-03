@@ -40,7 +40,7 @@ class HomeMethodItem extends Component {
                     actionIcon={<IconButton><AddMethodIcon color="white" /></IconButton>}
                     onClick={this.handleOpen}
                 >
-                    <img height="250" width="250" src={this.props.method.image}/>
+                    <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 </GridTile>
                 <Dialog
                     title={this.props.method.title}
@@ -49,7 +49,7 @@ class HomeMethodItem extends Component {
                     contentStyle={styles.dialogStyling}
                     onRequestClose={this.handleClose}
                 >
-                <img height="250" width="250" src={this.props.method.image}/>
+                <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 <p>This is the existing method extended. Keep on writing more stuff and add more stuff in here. </p>
                 </Dialog>
             </div>
