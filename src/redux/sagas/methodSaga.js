@@ -1,10 +1,11 @@
 import { takeEvery, put } from 'redux-saga/effects';
-import { callGetMethod, callAddMethod } from '../requests/methodRequests';
+import { callGetMethod, callAddMethod, callDelMethod } from '../requests/methodRequests';
 
 function* methodSaga() {
   console.log('root saga loaded');
   yield takeEvery('GET_METHOD', getMethodSaga);
   yield takeEvery('ADD_METHOD', postMethodSaga);
+  yield takeEvery('DEL_METHOD', delMethodSaga);
 }
 
 function* getMethodSaga() {
@@ -34,6 +35,20 @@ function* postMethodSaga(action) {
         message: error.data,
       });
     }
+}
+
+function* delMethodSaga(action) {
+  try {
+    const delMethod = yield callDelMethod(action);
+    yield put({
+      type: 'GET_METHOD',
+    });
+  } catch (error) {
+    yield put({
+      type: 'GET_REQUEST_FAILED',
+      message: error.data,
+    });
+  }
 }
   
 export default methodSaga;

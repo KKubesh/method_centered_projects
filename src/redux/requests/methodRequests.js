@@ -8,6 +8,12 @@ export function callGetMethod() {
 
 export function callAddMethod(action) {
     return axios.post('api/method', action.payload)
-    .then((response) => response.data)
+    .then(response => response.data)
     .catch(error => { throw error.reponse || error; });
+}
+
+export function callDelMethod(action) {
+    return axios.delete('api/method/'+ action.payload.id)
+    .then(response => response.data)
+    .catch(error => { throw error.response || error; });
 }
