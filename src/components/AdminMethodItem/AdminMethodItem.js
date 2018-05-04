@@ -58,7 +58,7 @@ class AdminMethodItem extends Component {
                         title={this.props.method.title}
                         action={
                             <IconButton>
-                                <DeleteForever />
+                                <DeleteForever onClick={this.delMethod}/>
                             </IconButton>
                         }
                     />
