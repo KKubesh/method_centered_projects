@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
-import Icon from 'material-ui/Icon';
+import { Queue } from '@material-ui/icons';
+import Card, { CardMedia, CardHeader } from 'material-ui/Card';
+import Button from 'material-ui/Button';
 
 const styles = {
     dialogStyling: {
         width: '80%',
-        minWidth: '300px'
+        minWidth: '300px',
+        padding: '30px',
     },
     root: {
-        display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
+    },
+    rootCard: {
+        padding: '10px',
+        margin: '5px',
     }
 }
 class HomeMethodItem extends Component {
@@ -32,13 +37,27 @@ class HomeMethodItem extends Component {
         
         return(
             <div style={styles.root}>
-                    <img alt="method" height="250" width="250" src={this.props.method.image} onClick={this.handleOpen}/>
+                <Card style={styles.rootCard} title={this.props.method.title}>
+                    <CardHeader 
+                        title={this.props.method.title}
+                        action={
+                            <IconButton>
+                              <Queue />
+                            </IconButton>
+                        }
+                    />
+                    <CardMedia
+                        style={{height: '290px', width: '290px'}}
+                        image={this.props.method.image}
+                        onClick={this.handleOpen}
+                    />
+                    
+                </Card>
                 <Dialog
                     title={this.props.method.title}
-                    // modal={false}
                     open={this.state.open}
-                    // contentStyle={styles.dialogStyling}
                     onClose={this.handleClose}
+                    style={styles.dialogStyling}
                 >
                 <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 <p>This is the existing method extended. Keep on writing more stuff and add more stuff in here. </p>

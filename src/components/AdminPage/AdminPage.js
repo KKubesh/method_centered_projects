@@ -8,6 +8,15 @@ import AdminMethods from '../AdminMethods/AdminMethods';
 import NewMethodDialog from '../NewMethodDialog/NewMethodDialog';
 import Button from 'material-ui/Button';
 
+const styles = {
+  root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      maxWidth: '960px'        
+  }
+};
+
 
 const mapStateToProps = state => ({
   user: state.user,

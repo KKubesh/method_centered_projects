@@ -7,12 +7,8 @@ const styles = {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-    },
-    gridList: {
-        width: 960,
-        height: 960,
-        overflowY: 'auto',
-    },
+        maxWidth: '960px'
+    }
 };
 
 const mapStateToProps = state => ({

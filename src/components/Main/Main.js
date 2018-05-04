@@ -4,6 +4,17 @@ import RegisterDialog from '../RegisterDialog/RegisterDialog';
 import HomeMethods from '../HomeMethods/HomeMethods';
 import { connect } from 'react-redux';
 
+const styles = {
+    root: {       
+        flexGrow: 1,
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        justify: 'center',
+        alignItems: 'center',
+    }
+};
+
 const mapStateToProps = state => ({
     state,
 });
@@ -14,16 +25,16 @@ class Main extends Component {
         console.log('MAIN LOADED');
         
         return(
-            <div>
-                <div>
+            <div style={styles.root}>
+                <div className="center-item">
                     <h2>Image and Content here</h2>
                 </div>
-                <div>
-                    <LoginDialog /> 
+                <div className="center-item">
+                    <LoginDialog />
                     <RegisterDialog />
                 </div>
                 <div>
-                    List of methods
+                    <h2>Methods</h2>
                     <HomeMethods/>
                 </div>
             </div>

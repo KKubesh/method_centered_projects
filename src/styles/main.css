@@ -78,7 +78,16 @@ li a:hover {
     color: #eee;
 }
 
-/* .bannerback {
-    background-image: src="//header.png";
-    background-color: #00acb0;
-} */
+.bannerback {
+    background-image: url("header.png");
+    height: 300px;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.center-item {
+    display: 'flex';
+    align-items: center;        
+    justify-content: center;
+    width: 100%;
+}
