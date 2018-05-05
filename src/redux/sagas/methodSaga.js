@@ -2,7 +2,7 @@ import { takeEvery, put } from 'redux-saga/effects';
 import { callGetMethod, callAddMethod, callDelMethod, callPutMethod } from '../requests/methodRequests';
 
 function* methodSaga() {
-  console.log('root saga loaded');
+  console.log('method saga loaded');
   yield takeEvery('GET_METHOD', getMethodSaga);
   yield takeEvery('ADD_METHOD', postMethodSaga);
   yield takeEvery('DEL_METHOD', delMethodSaga);
