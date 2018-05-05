@@ -13,7 +13,7 @@ export function callAddMethod(action) {
 }
 
 export function callPutMethod(action) {
-    return axios.put('api/method'+ action.payload.id, action.payload)
+    return axios.put('api/method/'+ action.payload.id, action.payload)
     .then(response => response.data)
     .catch(error => { throw error.reponse || error; });
 }
