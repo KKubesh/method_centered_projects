@@ -5,16 +5,19 @@ import { DeleteForever } from '@material-ui/icons';
 import { connect } from 'react-redux';
 import { ActionDeleteForever } from 'material-ui';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
+import Grid from 'material-ui/Grid';
 
 const styles = {
+    // dialog is prevent overlap when screen is scaled down
     dialogStyling: {
-        width: '80%',
         minWidth: '300px',
-        padding: '30px',        
+        margin: '30px',        
     },
+    // root is meant to wrap all items
     root: {
         flexWrap: 'wrap',
     },
+    // rootCard applies simple padding and margins for needed white space
     rootCard: {
         padding: '10px',
         margin: '5px',
@@ -73,10 +76,48 @@ class AdminMethodItem extends Component {
                     title={this.props.method.title}
                     open={this.state.open}
                     onClose={this.handleClose}
-                    style={styles.dialogStyling}
                 >
-                <img alt="method" height="250" width="250" src={this.props.method.image}/>
-                <p>This is the existing method extended admin. Keep on writing more stuff and add more stuff in here. </p>
+                    <Grid style={styles.dialogStyling} container spacing={24}>
+                        <Grid item xs={6}>
+                            <h2>
+                                {this.props.method.title}
+                            </h2>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p>
+                                * click text to edit
+                                <IconButton style={{margin: '20px'}}>
+                                    <DeleteForever onClick={this.delMethod}/>
+                                </IconButton>
+                            </p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <img alt="method" height="250" width="250" src={this.props.method.image}/>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <p>{this.props.method.statements}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Time</p>
+                            <p>{this.props.method.time_amount}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Diffculty</p>
+                            <p>{this.props.method.diffculty}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Materials Needed</p>
+                            <p>{this.props.method.need}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Participants</p>
+                            <p>{this.props.method.participants}</p>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <p style={{fontWeight: 'bold'}}>Steps</p>
+                            <p>{this.props.method.steps}</p>
+                        </Grid>
+                    </Grid>
                 </Dialog>
             </div>
         )

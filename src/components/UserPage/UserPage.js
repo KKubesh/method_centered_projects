@@ -7,7 +7,19 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 import UserMethods from '../UserMethods/UserMethods';
 import ProjectList from '../ProjectList/ProjectList';
 import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
+
+const styles = {
+  root: {       
+      flexGrow: 1,
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      justify: 'center',
+      alignItems: 'center',
+  }
+};
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -34,15 +46,15 @@ class UserPage extends Component {
 
     if (this.props.user.userName) {
       content = (
-        <div>
-          <div>
+        <div style={styles.root}>
+          <Grid item xs={12}>
             <h1 id="welcome">
               Welcome, { this.props.user.userName }!
             </h1>
             <Button onClick={this.logout}>
               Log Out
             </Button>
-          </div>
+          </Grid>
           <ProjectList />
           <div>
             <p>Long paragraph of explaination on how to use this stuff in the User's page.</p>
