@@ -4,10 +4,10 @@ import Dialog from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
 const styles = {
     dialogStyling: {
-        width: '80%',
         minWidth: '300px',
         padding: '30px',
     },
@@ -59,8 +59,42 @@ class HomeMethodItem extends Component {
                     onClose={this.handleClose}
                     style={styles.dialogStyling}
                 >
-                <img alt="method" height="250" width="250" src={this.props.method.image}/>
-                <p>This is the existing method extended. Keep on writing more stuff and add more stuff in here. </p>
+                    <Grid style={styles.dialogStyling} container spacing={24}>
+                        <Grid item xs={12}>
+                            <h2>
+                                {this.props.method.title}
+                                <IconButton style={{margin: '20px'}}>
+                                    <Queue />
+                                </IconButton>   
+                            </h2>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <img alt="method" height="250" width="250" src={this.props.method.image}/>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <p>{this.props.method.statements}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Time</p>
+                            <p>{this.props.method.time_amount}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Diffculty</p>
+                            <p>{this.props.method.diffculty}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Materials Needed</p>
+                            <p>{this.props.method.need}</p>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <p style={{fontWeight: 'bold'}}>Participants</p>
+                            <p>{this.props.method.participants}</p>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <p style={{fontWeight: 'bold'}}>Steps</p>
+                            <p>{this.props.method.steps}</p>
+                        </Grid>
+                    </Grid>
                 </Dialog>
             </div>
         )
