@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { ActionDeleteForever } from 'material-ui';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
+import Button from 'material-ui/Button'
 
 const styles = {
     // dialog is prevent overlap when screen is scaled down
@@ -41,9 +42,12 @@ class AdminMethodItem extends Component {
     handleClose = () => {
         this.setState({open: false});
     };
-
-    handleClick = () => {
-        this.delMethod(this.props.method)
+    
+    putMethod = () => {
+        this.props.dispatch({
+            type: 'PUT_METHOD',
+            payload: this.props.method
+        })
     }
 
     delMethod = () => {
@@ -117,6 +121,7 @@ class AdminMethodItem extends Component {
                             <p style={{fontWeight: 'bold'}}>Steps</p>
                             <p>{this.props.method.steps}</p>
                         </Grid>
+                        <Button onClick={this.putMethod}>Save</Button>
                     </Grid>
                 </Dialog>
             </div>
