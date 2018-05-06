@@ -4,6 +4,7 @@ import UserMethodItem from '../UserMethodItem/UserMethodItem';
 
 const styles = {
     root: {
+        display: 'flex',
         justifyContent: 'space-around',
         flexWrap: 'wrap',
     }

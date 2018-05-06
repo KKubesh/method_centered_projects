@@ -20,8 +20,7 @@ router.post('/', (req, res) => {
         project_title,
         description
     ) VALUES ($1, $2, $3);`;
-    pool.query(queryText, [m.title, m.statements, m.description, m.time_amount, 
-        m.diffculty, m.need, m.participants, m.steps, m.image])
+    pool.query(queryText, [m.person_id, m.project_title, m.description])
         .then(result => { res.send(result.rows); })
         .catch(err => {
             console.log('Error completing GET methods in router', err);
