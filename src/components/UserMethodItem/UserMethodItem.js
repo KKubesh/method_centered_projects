@@ -20,7 +20,7 @@ const styles = {
     }
 }
 
-class AdminMethodItem extends Component {
+class UserMethodItem extends Component {
 
     state = {
         open: false,
@@ -102,4 +102,4 @@ class AdminMethodItem extends Component {
     }
 }
 
-export default AdminMethodItem;
+export default UserMethodItem;

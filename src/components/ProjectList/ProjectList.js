@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
 import Icon from 'material-ui/Icon';
+import ProjectItem from '../ProjectItem/ProjectItem';
 
 const styles = {
     dialogStyling: {
@@ -15,7 +17,17 @@ const styles = {
     }
 }
 
+const mapStateToProps = state => ({
+    state,
+});
+
 class ProjectList extends Component {
+    componentDidMount() {
+        // use component did mount to dispatch an action to request the methodsList from the API
+        this.props.dispatch({
+            type: 'GET_PROJECT'
+        })
+    }
 
     state = {
         open: false,
@@ -30,13 +42,19 @@ class ProjectList extends Component {
     };
     
     render() { 
-        
+        console.log(this.props.state.project);
+        let projects = this.props.state.project.map(project => {
+            return (
+                <ProjectItem key={project.id} project={project}/>
+            )
+        })
+
         return(
             <div style={styles.root}>
-                <h1>Project Project</h1>
+                    {projects}
             </div>
         )
     }
 }
 
-export default ProjectList;
+export default connect(mapStateToProps)(ProjectList);

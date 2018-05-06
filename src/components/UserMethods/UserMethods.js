@@ -6,7 +6,6 @@ const styles = {
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        justifyContent: 'space-around',
         maxWidth: '960px'
     }
 };
@@ -15,7 +14,7 @@ const mapStateToProps = state => ({
     state,
 });
 
-class AdminMethods extends Component {
+class UserMethods extends Component {
     componentDidMount() {
         // use component did mount to dispatch an action to request the methodsList from the API
         this.props.dispatch({
@@ -39,4 +38,4 @@ class AdminMethods extends Component {
     }
 }
 
-export default connect(mapStateToProps)(AdminMethods);
+export default connect(mapStateToProps)(UserMethods);
