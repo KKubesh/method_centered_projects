@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import IconButton from 'material-ui/IconButton';
-import { FolderOpen } from '@material-ui/icons';
+import { FolderOpen, DeleteForever } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 
 const styles = {
@@ -9,6 +10,10 @@ const styles = {
         margin: '5px',
     }
 }
+
+const mapStateToProps = state => ({
+    state
+});
 
 class ProjectItem extends Component {
 
@@ -23,6 +28,13 @@ class ProjectItem extends Component {
     handleClose = () => {
         this.setState({open: false});
     };
+
+    delProject = () => {
+        this.props.dispatch({
+            type: 'DEL_PROJECT',
+            payload: this.props.project
+        })
+    }
     
     render() { 
         
@@ -31,9 +43,14 @@ class ProjectItem extends Component {
                 <CardHeader 
                     title={this.props.project.project_title}
                     action={
-                        <IconButton>
-                            <FolderOpen />
-                        </IconButton>
+                        <div>
+                            <IconButton>
+                                <FolderOpen />
+                            </IconButton>
+                            <IconButton>
+                                <DeleteForever onClick={this.delProject}/>
+                            </IconButton>
+                        </div>
                     }
                 />
                 {/* <CardMedia
@@ -46,4 +63,4 @@ class ProjectItem extends Component {
     }
 }
 
-export default ProjectItem;
+export default connect(mapStateToProps)(ProjectItem);
