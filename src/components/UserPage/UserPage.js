@@ -47,13 +47,6 @@ class UserPage extends Component {
     // this.props.history.push('home');
   }
 
-  postProject = () => {
-    this.props.dispatch({
-      type: 'POST_PROJECT',
-      payload: this.props.project
-    })
-  } 
-
   state = {
     open: false,
   };
@@ -86,7 +79,7 @@ class UserPage extends Component {
                 <CreateNewFolder onClick={this.handleOpen} />
               </IconButton>
               <Dialog open={this.state.open} onClose={this.handleClose}>
-                <DialogTitle>Create New Method</DialogTitle>
+                <DialogTitle>Create New Project</DialogTitle>
                 <ProjectForm handleClose={this.handleClose}/>
               </Dialog> 
             </h2>
