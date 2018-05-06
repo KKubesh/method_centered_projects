@@ -8,11 +8,7 @@ import Grid from 'material-ui/Grid';
 
 const styles = {
     dialogStyling: {
-        minWidth: '300px',
         padding: '30px',
-    },
-    root: {
-        display: 'flex'
     },
     rootCard: {
         padding: '10px',
@@ -37,7 +33,7 @@ class UserMethodItem extends Component {
     render() { 
         
         return(
-            <div style={styles.root}>
+            <Grid item>
                 <Card style={styles.rootCard} title={this.props.method.title}>
                     <CardHeader 
                         title={this.props.method.title}
@@ -97,7 +93,7 @@ class UserMethodItem extends Component {
                         </Grid>
                     </Grid>
                 </Dialog>
-            </div>
+            </Grid>
         )
     }
 }

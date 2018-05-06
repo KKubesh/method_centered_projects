@@ -13,8 +13,18 @@ import AdminPage from './components/AdminPage/AdminPage';
 
 import './styles/main.css';
 
+const styles = {
+  root: {       
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      justify: 'center',
+      alignItems: 'center',
+  }
+}
+
 const App = () => (
-  <div>
+  <div style={styles.root}>
     <Header title="Method Centered App" />
     <Router>
       <Switch>

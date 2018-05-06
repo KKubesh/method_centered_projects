@@ -12,6 +12,7 @@ const styles = {
         justifyContent: 'space-around',
         justify: 'center',
         alignItems: 'center',
+        maxWidth: '960px',        
     }
 };
 

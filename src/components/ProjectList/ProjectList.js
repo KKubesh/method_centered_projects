@@ -1,21 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import IconButton from 'material-ui/IconButton';
-import Dialog from 'material-ui/Dialog';
-import Icon from 'material-ui/Icon';
 import ProjectItem from '../ProjectItem/ProjectItem';
-
-const styles = {
-    dialogStyling: {
-        width: '80%',
-        minWidth: '300px'
-    },
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    }
-}
 
 const mapStateToProps = state => ({
     state,
@@ -50,8 +35,8 @@ class ProjectList extends Component {
         })
 
         return(
-            <div style={styles.root}>
-                    {projects}
+            <div>
+                {projects}
             </div>
         )
     }

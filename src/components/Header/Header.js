@@ -1,13 +1,14 @@
 import React from 'react';
+import Grid from 'material-ui/Grid'
 
 const Header = ({ title }) => (
-  <div>
-    <div className="center-item">
+  <Grid container xs={12}>
+    <Grid item xs={12}>
       <h1>{ title }</h1>
-    </div>
+    </Grid>
     <div className="bannerback">
     </div>
-  </div>
+  </Grid>
 );
 
 export default Header;
