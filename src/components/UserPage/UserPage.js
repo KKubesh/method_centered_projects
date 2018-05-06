@@ -18,6 +18,7 @@ const styles = {
       justifyContent: 'space-around',
       justify: 'center',
       alignItems: 'center',
+      maxWidth: '960px',
   }
 };
 
@@ -47,7 +48,7 @@ class UserPage extends Component {
     if (this.props.user.userName) {
       content = (
         <div style={styles.root}>
-          <Grid item xs={12}>
+          <Grid xs={12}>
             <h1 id="welcome">
               Welcome, { this.props.user.userName }!
             </h1>
@@ -55,14 +56,16 @@ class UserPage extends Component {
               Log Out
             </Button>
           </Grid>
-          <ProjectList />
-          <div>
+          <Grid item xs={12}>
+            <ProjectList />
+          </Grid>
+          <Grid xs={12}>
             <p>Long paragraph of explaination on how to use this stuff in the User's page.</p>
-          </div>
-          <div>
+          </Grid>
+          <Grid item xs={12}>
             List of methods
             <UserMethods />
-          </div>
+          </Grid>
         </div>
       );
     }

@@ -6,7 +6,6 @@ const styles = {
     root: {
         display: 'flex',
         flexWrap: 'wrap',
-        maxWidth: '960px'        
     }
 };
 
