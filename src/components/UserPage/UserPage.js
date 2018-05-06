@@ -6,8 +6,13 @@ import { triggerLogout } from '../../redux/actions/loginActions';
 
 import UserMethods from '../UserMethods/UserMethods';
 import ProjectList from '../ProjectList/ProjectList';
+import ProjectForm from '../ProjectForm/ProjectForm';
+
 import Button from 'material-ui/Button';
+import IconButton from 'material-ui/IconButton';
+import { CreateNewFolder } from '@material-ui/icons';
 import Grid from 'material-ui/Grid';
+import Dialog, { DialogTitle } from 'material-ui/Dialog';
 
 
 const styles = {
@@ -42,6 +47,25 @@ class UserPage extends Component {
     // this.props.history.push('home');
   }
 
+  postProject = () => {
+    this.props.dispatch({
+      type: 'POST_PROJECT',
+      payload: this.props.project
+    })
+  } 
+
+  state = {
+    open: false,
+  };
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
   render() {
     let content = null;
 
@@ -57,6 +81,15 @@ class UserPage extends Component {
             </Button>
           </Grid>
           <Grid item xs={12}>
+            <h2>Projects
+              <IconButton style={{margin: '20px'}}>
+                <CreateNewFolder onClick={this.handleOpen} />
+              </IconButton>
+              <Dialog open={this.state.open} onClose={this.handleClose}>
+                <DialogTitle>Create New Method</DialogTitle>
+                <ProjectForm handleClose={this.handleClose}/>
+              </Dialog> 
+            </h2>
             <ProjectList />
           </Grid>
           <Grid xs={12}>

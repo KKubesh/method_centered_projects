@@ -24,10 +24,6 @@ class MethodForm extends Component {
     };
   }
 
-  componentDidMount() {
-    
-  }
-
   newMethod = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'ADD_METHOD', payload: this.state })

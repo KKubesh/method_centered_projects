@@ -50,7 +50,7 @@ class AdminPage extends Component {
         <div style={styles.root}>
           <Grid item xs={12}>
             <h1 id="welcome">
-              Welcome, { this.props.user.userName }!
+              Welcome, Admin!
             </h1>
             <Button onClick={this.logout}>
               Log Out
