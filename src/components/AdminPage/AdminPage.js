@@ -8,7 +8,7 @@ import AdminMethods from '../AdminMethods/AdminMethods';
 import NewMethodDialog from '../NewMethodDialog/NewMethodDialog';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid'
-
+// styling to keep content centered inside of the page and flex
 const styles = {
   root: {       
       flexGrow: 1,
@@ -20,7 +20,6 @@ const styles = {
       maxWidth: '960px',
   }
 }
-
 
 const mapStateToProps = state => ({
   user: state.user,
@@ -36,7 +35,7 @@ class AdminPage extends Component {
       this.props.history.push('home');
     }
   }
-
+  // log out moved to allow for user to log out on their page
   logout = () => {
     this.props.dispatch(triggerLogout());
     // this.props.history.push('home');
@@ -44,7 +43,7 @@ class AdminPage extends Component {
 
   render() {
     let content = null;
-
+    //null and if statement to prevent unauthorized users from seeing content
     if (this.props.user.userName) {
       content = (
         <div style={styles.root}>

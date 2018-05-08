@@ -7,6 +7,8 @@ const Header = ({ title }) => (
       <h1>{ title }</h1>
     </Grid>
     <div className="bannerback">
+    {/* image banner full width of screen */}
+    {/* woud like to add project title here without opacity issues */}
     </div>
   </Grid>
 );
