@@ -3,21 +3,16 @@ import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import MethodForm from '../MethodForm/MethodForm';
 
-const dialogStyling = {
-    width: '80%',
-    minWidth: '300px'
-};
-
 class LoginDialog extends Component {
-
+    // when loaded set open to false
     state = {
         open: false,
     };
-
+    // switches open
     handleOpen = () => {
         this.setState({open: true});
     };
-
+    // switches open
     handleClose = () => {
         this.setState({open: false});
     };
@@ -26,6 +21,7 @@ class LoginDialog extends Component {
         return (
             <div>
                 <Button label="New Method" onClick={this.handleOpen}>New Method</Button>
+                {/* shows dialog below when open is true */}
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                 <DialogTitle>Create New Method</DialogTitle>
                 <MethodForm handleClose={this.handleClose}/>

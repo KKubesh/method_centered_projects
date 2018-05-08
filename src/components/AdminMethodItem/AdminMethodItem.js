@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import Card, { CardMedia, CardHeader, CardTitle } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
-import EditableLabel from 'react-inline-editing';
 import TextField from 'material-ui/TextField';
 
 const styles = {
@@ -31,13 +30,12 @@ const mapStateToProps = state => ({
 });
 
 class AdminMethodItem extends Component {
-
+    // establishing local properties of open and editingItem
     state = {
         open: false,
-        editingItem: false,
-        title: ''
+        editingItem: false
     };
-
+    // this handles editing property of each input field. note onBlur is when this is fired
     handleChangeFor = propertyName => (event) => {
         const itemToEdit = this.props.method
         const editItem = {
@@ -45,30 +43,31 @@ class AdminMethodItem extends Component {
         }
         editItem[propertyName] = event.target.value;
         this.putMethod(editItem);
+        // this handleEdit does the job but shows it changing from old input to new input onBlur need to change this
         this.handleEdit()        
     }
-
+    // handles dialog status
     handleOpen = () => {
         this.setState({open: true});
     };
-
+    // handles dialog status    
     handleClose = () => {
         this.setState({open: false});
     };
-
+    // this is fired to turn off editing inputs
     handleEdit = () => {
         this.setState({
             editingItem: !this.state.editingItem
         });
     }
-    
+    // dispatches the new changes being made see handleChangeFor
     putMethod = (editItem) => {
         this.props.dispatch({
             type: 'PUT_METHOD',
             payload: editItem
         })
     }
-
+    // deletes the method
     delMethod = () => {
         this.props.dispatch({
             type: 'DEL_METHOD',
