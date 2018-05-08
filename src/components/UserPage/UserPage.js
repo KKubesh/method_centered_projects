@@ -65,7 +65,7 @@ class UserPage extends Component {
     if (this.props.user.userName) {
       content = (
         <div style={styles.root}>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <h1 id="welcome">
               Welcome, { this.props.user.userName }!
             </h1>
@@ -85,7 +85,7 @@ class UserPage extends Component {
             </h2>
             <ProjectList />
           </Grid>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <p>Long paragraph of explaination on how to use this stuff in the User's page.</p>
           </Grid>
           <Grid item xs={12}>

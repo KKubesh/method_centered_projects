@@ -14,13 +14,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    let m = req.body;
+    let p = req.body;
     const queryText = `INSERT INTO project (
         person_id,
         project_title,
         description
     ) VALUES ($1, $2, $3);`;
-    pool.query(queryText, [m.person_id, m.project_title, m.description])
+    pool.query(queryText, [p.person_id, p.project_title, p.description])
         .then(result => { res.send(result.rows); })
         .catch(err => {
             console.log('Error completing GET projects in router', err);
@@ -29,14 +29,12 @@ router.post('/', (req, res) => {
 });
 
 // router.put('/:id', (req, res) => {
-//     let m = req.body;
+//     let p = req.body;
 //     const queryText = `UPDATE method SET 
-//         person_id,
-//         project_title,
-//         description
-//         WHERE id = $10;`;
-//     pool.query(queryText, [m.title, m.statements, m.description, m.time_amount, 
-//         m.diffculty, m.need, m.participants, m.steps, m.image, m.id])
+//         project_title = $1,
+//         description = $2
+//         WHERE id = $3;`;
+//     pool.query(queryText, [p.project_title, p.description, p.id])
 //         .then(result => { res.send(result.rows); })
 //         .catch(err => {
 //             console.log('Error completing GET methods in router', err);

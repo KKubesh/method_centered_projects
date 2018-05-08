@@ -95,3 +95,24 @@ li a:hover {
 h2, h1 {
     text-align: center;
 }
+
+.titleMethod input {
+    font-size: 24px;
+    text-align: left;
+}
+
+.titleMethod {
+    font-size: 24px;
+    text-align: left;
+    line-height: 70px;
+}
+
+.paraText {
+    font-size: 16px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+input:focus{
+    outline: none;
+}

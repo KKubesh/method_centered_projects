@@ -3,7 +3,6 @@ import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 
 const styles = {
