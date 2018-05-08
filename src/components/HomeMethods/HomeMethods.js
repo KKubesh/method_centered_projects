@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MethodItem from '../HomeMethodItem/HomeMethodItem';
-
+// standard styling may need adjustments
 const styles = {
     root: {
         display: 'flex',
@@ -22,7 +22,6 @@ class HomeMethods extends Component {
     }
 
     render() {
-        console.log(this.props.state.method);
         let methods = this.props.state.method.map(method => {
             return (
                 <MethodItem key={method.id} method={method}/>
@@ -31,7 +30,7 @@ class HomeMethods extends Component {
         
         return(
             <div style={styles.root}>
-                    {methods}
+                {methods}
             </div>
         )
     }

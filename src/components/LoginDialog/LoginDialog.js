@@ -4,15 +4,15 @@ import Button from 'material-ui/Button';
 import LoginPage from '../LoginPage/LoginPage';
 
 class LoginDialog extends Component {
-
+    // dialog status established
     state = {
         open: false,
     };
-
+    // dialog status change
     handleOpen = () => {
         this.setState({open: true});
     };
-
+    // dialog status change
     handleClose = () => {
         this.setState({open: false});
     };
@@ -21,6 +21,7 @@ class LoginDialog extends Component {
         return (
             <div>
                 <Button label="Sign In" onClick={this.handleOpen}>Sign In</Button>
+                {/* dialog appears when open is true */}
                 <Dialog open={this.state.open} onClose={this.handleClose}>
                     <DialogTitle> Sign in to manage your content.</DialogTitle>
                     <LoginPage handleClose={this.handleClose}/>
