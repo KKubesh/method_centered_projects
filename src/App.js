@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import UserPage from './components/UserPage/UserPage';
 import Main from './components/Main/Main';
 import AdminPage from './components/AdminPage/AdminPage';
+import ProjectPage from './components/ProjectPage/ProjectPage';
 
 import './styles/main.css';
 
@@ -40,6 +41,10 @@ const App = () => (
         <Route
           path="/user"
           component={UserPage}
+        />
+        <Route
+          path="/project"
+          component={ProjectPage}
         />
         {/* OTHERWISE (no path!) */}
         <Route render={() => <h1>404</h1>} />
