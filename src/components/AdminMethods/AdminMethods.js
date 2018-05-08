@@ -22,7 +22,6 @@ class AdminMethods extends Component {
     }
 
     render() {
-        console.log(this.props.state.method);
         let methods = this.props.state.method.map(method => {
             return (
                 <AdminMethodItem key={method.id} method={method}/>
@@ -31,7 +30,7 @@ class AdminMethods extends Component {
         
         return(
             <div style={styles.root}>
-                    {methods}
+                {methods}
             </div>
         )
     }

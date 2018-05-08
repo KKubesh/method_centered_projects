@@ -4,7 +4,7 @@ import Dialog from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
-
+// addition styling may need adjustments
 const styles = {
     dialogStyling: {
         minWidth: '300px',
@@ -19,26 +19,26 @@ const styles = {
     }
 }
 class HomeMethodItem extends Component {
-
+    // dialog state established
     state = {
         open: false,
     };
-
+    // dialog status change
     handleOpen = () => {
         this.setState({open: true});
     };
-
+    // dialog status change
     handleClose = () => {
         this.setState({open: false});
     };
     
     render() {
-        
         return(
             <div style={styles.root}>
                 <Card style={styles.rootCard} title={this.props.method.title}>
                     <CardHeader 
                         title={this.props.method.title}
+                        // dialog propmting login for action below
                         action={
                             <IconButton>
                               <Queue />
