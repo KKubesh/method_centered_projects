@@ -44,8 +44,8 @@ class AdminMethodItem extends Component {
             ...itemToEdit
         }
         editItem[propertyName] = event.target.value;
-        
         this.putMethod(editItem);
+        this.handleEdit()        
     }
 
     handleOpen = () => {
@@ -97,35 +97,70 @@ class AdminMethodItem extends Component {
                         <IconButton style={{margin: '20px'}}>
                             <DeleteForever onClick={this.delMethod}/>
                         </IconButton>
-                    
                 </Grid>
                 <Grid item xs={6}>
                     <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 </Grid>
                 <Grid item xs={12}>
-                    <p>
-                        {this.props.method.statements}
-                    </p>
+                    <TextField 
+                        id="statements"
+                        type="search"
+                        defaultValue={this.props.method.statements}
+                        margin="normal"
+                        onBlur={this.handleChangeFor('statements')}
+                    />
                 </Grid>
                 <Grid item xs={6}>
                     <p style={{fontWeight: 'bold'}}>Time</p>
-                    <p>{this.props.method.time_amount}</p>
+                    <TextField 
+                        id="time_amount"
+                        type="search"
+                        defaultValue={this.props.method.time_amount}
+                        margin="normal"
+                        onBlur={this.handleChangeFor('time_amount')}
+                    />
                 </Grid>
                 <Grid item xs={6}>
                     <p style={{fontWeight: 'bold'}}>Diffculty</p>
-                    <p>{this.props.method.diffculty}</p>
+                    <TextField 
+                        id="diffculty"
+                        type="search"
+                        defaultValue={this.props.method.diffculty}
+                        margin="normal"
+                        onBlur={this.handleChangeFor('diffculty')}
+                    />
                 </Grid>
                 <Grid item xs={6}>
                     <p style={{fontWeight: 'bold'}}>Materials Needed</p>
-                    <p>{this.props.method.need}</p>
+                    <TextField 
+                        id="need"
+                        type="search"
+                        defaultValue={this.props.method.need}
+                        margin="normal"
+                        onBlur={this.handleChangeFor('need')}
+                    />
                 </Grid>
                 <Grid item xs={6}>
                     <p style={{fontWeight: 'bold'}}>Participants</p>
-                    <p>{this.props.method.participants}</p>
+                    <TextField 
+                        id="participants"
+                        type="search"
+                        defaultValue={this.props.method.participants}
+                        margin="normal"
+                        onBlur={this.handleChangeFor('participants')}
+                    />
                 </Grid>
                 <Grid item xs={12}>
                     <p style={{fontWeight: 'bold'}}>Steps</p>
-                    <p>{this.props.method.steps}</p>
+                    <TextField 
+                        id="steps"
+                        type="search"
+                        defaultValue={this.props.method.steps}
+                        margin="normal"
+                        fullWidth={true}
+                        multiline={true}
+                        onBlur={this.handleChangeFor('steps')}
+                    />
                 </Grid>
                 <Button onClick={this.handleChangeFor}>Save</Button>
             </Grid>                
@@ -150,29 +185,29 @@ class AdminMethodItem extends Component {
                         <img alt="method" height="250" width="250" src={this.props.method.image}/>
                     </Grid>
                     <Grid item xs={12}>
-                        <p>
+                        <p onClick={this.handleEdit}>
                             {this.props.method.statements}
                         </p>
                     </Grid>
                     <Grid item xs={6}>
                         <p style={{fontWeight: 'bold'}}>Time</p>
-                        <p>{this.props.method.time_amount}</p>
+                        <p onClick={this.handleEdit}>{this.props.method.time_amount}</p>
                     </Grid>
                     <Grid item xs={6}>
                         <p style={{fontWeight: 'bold'}}>Diffculty</p>
-                        <p>{this.props.method.diffculty}</p>
+                        <p onClick={this.handleEdit}>{this.props.method.diffculty}</p>
                     </Grid>
                     <Grid item xs={6}>
                         <p style={{fontWeight: 'bold'}}>Materials Needed</p>
-                        <p>{this.props.method.need}</p>
+                        <p onClick={this.handleEdit}>{this.props.method.need}</p>
                     </Grid>
                     <Grid item xs={6}>
                         <p style={{fontWeight: 'bold'}}>Participants</p>
-                        <p>{this.props.method.participants}</p>
+                        <p onClick={this.handleEdit}>{this.props.method.participants}</p>
                     </Grid>
                     <Grid item xs={12}>
                         <p style={{fontWeight: 'bold'}}>Steps</p>
-                        <p>{this.props.method.steps}</p>
+                        <p onClick={this.handleEdit}>{this.props.method.steps}</p>
                     </Grid>
                     <Button onClick={this.putMethod}>Save</Button>
                 </Grid>
