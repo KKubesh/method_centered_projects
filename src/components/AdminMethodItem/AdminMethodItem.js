@@ -76,13 +76,6 @@ class AdminMethodItem extends Component {
         })
     } 
 
-    sendChange = () => {
-        this.props.dispatch({
-            type: 'PUT_METHOD',
-            payload: this.props.method
-        })
-    }
-
     render() {
         let adminDialogContent 
         if (this.state.editingItem===true) {
@@ -147,7 +140,7 @@ class AdminMethodItem extends Component {
                         </h2>
                     </Grid>
                     <Grid item xs={6}>
-                        <div onClick={this.handleEdit}>* click text to edit</div>
+                        <div>* click text to edit</div>
                             <IconButton style={{margin: '20px'}}>
                                 <DeleteForever onClick={this.delMethod}/>
                             </IconButton>
