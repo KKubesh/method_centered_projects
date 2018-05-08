@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AdminMethodItem from '../AdminMethodItem/AdminMethodItem';
-
+// styling added to wrap items being added through the mapped content
 const styles = {
     root: {
         display: 'flex',
