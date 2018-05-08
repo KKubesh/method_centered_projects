@@ -37,7 +37,7 @@ class UserPage extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.props.user.isLoading && this.props.user.userName === null) {
+    if (!this.props.user.isLoading && this.props.user.userInfo === null) {
       this.props.history.push('home');
     }
   }
@@ -62,12 +62,12 @@ class UserPage extends Component {
   render() {
     let content = null;
 
-    if (this.props.user.userName) {
+    if (this.props.user.userInfo) {
       content = (
         <div style={styles.root}>
           <Grid item xs={12}>
             <h1 id="welcome">
-              Welcome, { this.props.user.userName }!
+              Welcome, { this.props.user.userInfo.username }!
             </h1>
             <Button onClick={this.logout}>
               Log Out

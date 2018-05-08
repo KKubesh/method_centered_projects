@@ -62,25 +62,30 @@ class UserPage extends Component {
 
     if (this.props.user.userName) {
       content = (
-        <div style={styles.root}>
-          <Grid item xs={12}>
-            <h1 id="welcome">
-              Project Name!
-            </h1>
-            <IconButton 
-                style={{margin: '20px'}}
-                color="secondary"
-            >
-                <ArrowBack />
-            </IconButton>
-          </Grid>
-          <Grid item xs={12}>
-            <p>Long paragraph of explaination on Project and how to use page.</p>
-          </Grid>
-          <Grid item xs={12}>
-            List of methods
-            <UserMethods />
-          </Grid>
+        <div>  
+            <Grid item xs={2}>
+                <IconButton 
+                    style={{margin: '20px'}}
+                    color="secondary"
+                >
+                    <ArrowBack />
+                </IconButton>
+            </Grid>
+            <Grid item xs={10} style={styles.root}>
+            <Grid item xs={10}>
+                <h1 id="welcome">
+                Project Name!
+                </h1>
+                
+            </Grid>
+            <Grid item xs={10}>
+                <p>Long paragraph of explaination on Project and how to use page.</p>
+            </Grid>
+            <Grid item xs={10}>
+                List of methods
+                <UserMethods />
+            </Grid>
+            </Grid>
         </div>
       );
     }

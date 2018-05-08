@@ -10,7 +10,8 @@ class ProjectList extends Component {
     componentDidMount() {
         // use component did mount to dispatch an action to request the methodsList from the API
         this.props.dispatch({
-            type: 'GET_PROJECT'
+            type: 'GET_PROJECT',
+            payload: this.props.user
         })
     }
 

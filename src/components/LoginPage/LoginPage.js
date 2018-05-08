@@ -25,7 +25,11 @@ class LoginPage extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user.userName) {
+    if (nextProps.user.role === 'admin') {
+      this.props.history.push('/admin');
+    } else if (nextProps.user.userName) {
+      console.log('this is the user', nextProps.user);
+      
       this.props.history.push('/user');
     }
   }
