@@ -79,11 +79,10 @@ li a:hover {
 }
 
 .bannerback {
-    background-image: url("header.png");
+    /* background-image: url("header.png"); */
     height: 300px;
+    width: 300px;
     background-repeat: no-repeat;
-    background-size: 100%;
-    opacity: 0.3;
 }
 
 .center-item {
