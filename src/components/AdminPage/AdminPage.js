@@ -31,7 +31,7 @@ class AdminPage extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.props.user.isLoading && this.props.user.userName === null) {
+    if (!this.props.user.isLoading && this.props.user.userInfo === null) {
       this.props.history.push('home');
     }
   }
@@ -44,7 +44,7 @@ class AdminPage extends Component {
   render() {
     let content = null;
     //null and if statement to prevent unauthorized users from seeing content
-    if (this.props.user.userName) {
+    if (this.props.user.userInfo) {
       content = (
         <div style={styles.root}>
           <Grid item xs={12}>

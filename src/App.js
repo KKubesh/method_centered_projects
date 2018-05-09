@@ -43,7 +43,7 @@ const App = () => (
           component={UserPage}
         />
         <Route
-          path="/project"
+          path="/project/:id"
           component={ProjectPage}
         />
         {/* OTHERWISE (no path!) */}
