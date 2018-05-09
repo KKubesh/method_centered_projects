@@ -27,22 +27,22 @@ const styles = {
 
 const mapStateToProps = state => ({
   user: state.user,
+  project: state.projectInfo
 });
 
-class UserPage extends Component {
+class ProjectPage extends Component {
   componentDidMount() {
     this.props.dispatch({ type: USER_ACTIONS.FETCH_USER });
+    this.props.dispatch({ 
+      type: 'PROJECT_INFO',
+      payload: this.props.match.params
+   })
   }
 
   componentDidUpdate() {
-    if (!this.props.user.isLoading && this.props.user.userName === null) {
+    if (!this.props.user.isLoading && this.props.user.userInfo === null) {
       this.props.history.push('home');
     }
-  }
-
-  logout = () => {
-    this.props.dispatch(triggerLogout());
-    // this.props.history.push('home');
   }
 
   state = {
@@ -59,33 +59,32 @@ class UserPage extends Component {
 
   render() {
     let content = null;
-
-    if (this.props.user.userName) {
+    console.log('this is project', this.props.project.id);
+    
+    if (this.props.user.userInfo) {
       content = (
-        <div>  
-            <Grid item xs={2}>
-                <IconButton 
-                    style={{margin: '20px'}}
-                    color="secondary"
-                >
-                    <ArrowBack />
-                </IconButton>
-            </Grid>
-            <Grid item xs={10} style={styles.root}>
-            <Grid item xs={10}>
-                <h1 id="welcome">
-                Project Name!
-                </h1>
-                
-            </Grid>
-            <Grid item xs={10}>
-                <p>Long paragraph of explaination on Project and how to use page.</p>
-            </Grid>
-            <Grid item xs={10}>
-                List of methods
-                <UserMethods />
-            </Grid>
-            </Grid>
+        <div>
+          <Grid item xs={12} style={styles.root}>
+          <IconButton 
+              style={{margin: '20px'}}
+              color="secondary"
+          >
+              <ArrowBack />
+          </IconButton>
+          <Grid item xs={12}>
+              <h1 id="welcome">
+                {this.props.project.project_title}
+              </h1>
+              
+          </Grid>
+          <Grid item xs={12}>
+              <p>Long paragraph of explaination on Project and how to use page.</p>
+          </Grid>
+          <Grid item xs={12}>
+              List of methods
+              <UserMethods />
+          </Grid>
+          </Grid>
         </div>
       );
     }
@@ -99,4 +98,4 @@ class UserPage extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStateToProps)(ProjectPage);

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import IconButton from 'material-ui/IconButton';
 import { FolderOpen, DeleteForever } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
+import { withRouter } from 'react-router-dom';
 
 const styles = {
     rootCard: {
@@ -35,6 +36,10 @@ class ProjectItem extends Component {
             payload: this.props.project
         })
     }
+
+    navProject = () => {
+        this.props.history.push(`/project/${this.props.project.id}`)
+    }
     
     render() { 
         
@@ -45,7 +50,7 @@ class ProjectItem extends Component {
                     action={
                         <div>
                             <IconButton>
-                                <FolderOpen />
+                                <FolderOpen onClick={this.navProject}/>
                             </IconButton>
                             <IconButton>
                                 <DeleteForever onClick={this.delProject}/>
@@ -63,4 +68,6 @@ class ProjectItem extends Component {
     }
 }
 
-export default connect(mapStateToProps)(ProjectItem);
+const routerProjectItem = withRouter(ProjectItem)
+
+export default connect(mapStateToProps)(routerProjectItem);
