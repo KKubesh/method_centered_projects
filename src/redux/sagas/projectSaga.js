@@ -1,14 +1,15 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { callGetProject, callAddProject, callDelProject, callPutProject } from '../requests/projectRequest';
-import { callGetProjectInfo } from '../requests/projectInfoRequest';
+import { callGetProjectInfo, callPostBookmark, callGetBookmark } from '../requests/projectInfoRequest';
 
 function* projectSaga() {
-  console.log('project saga loaded');
   yield takeEvery('GET_PROJECT', getProjectSaga);
   yield takeEvery('ADD_PROJECT', postProjectSaga);
   yield takeEvery('DEL_PROJECT', delProjectSaga);
   yield takeEvery('PUT_PROJECT', putProjectSaga);
-  yield takeEvery('PROJECT_INFO', getProjectInfoSaga)
+  yield takeEvery('PROJECT_INFO', getProjectInfoSaga);
+  yield takeEvery('POST_BOOKMARK', postBookmarkSaga);
+  yield takeEvery('GET_BOOKMARK', getBookmarkSaga)
 }
 // use as a general get for the user's projects
 function* getProjectSaga() {
@@ -20,7 +21,7 @@ function* getProjectSaga() {
       });
     } catch (error) {
       yield put({
-        type: 'GET_REQUEST_FAILED',
+        type: 'GET_PROJECT_REQUEST_FAILED',
         message: error.data,
       });
     }
@@ -35,7 +36,7 @@ function* getProjectInfoSaga(action) {
       });
     } catch (error) {
       yield put({
-        type: 'GET-PROJECT-INFO_REQUEST_FAILED',
+        type: 'GET_PROJECT-INFO_REQUEST_FAILED',
         message: error.data,
       });
     }
@@ -49,10 +50,40 @@ function* postProjectSaga(action) {
       });
     } catch (error) {
       yield put({
-        type: 'GET_REQUEST_FAILED',
+        type: 'POST_PROJECT_REQUEST_FAILED',
         message: error.data,
       });
     }
+}
+
+function* postBookmarkSaga(action) {  
+  try {
+      const addBookmark = yield callPostBookmark(action);
+      yield put({
+        type: 'GET_BOOKMARK',
+        payload: action.payload
+      });
+    } catch (error) {
+      yield put({
+        type: 'POST_BOOKMARK_REQUEST_FAILED',
+        message: error.data,
+      });
+    }
+}
+
+function* getBookmarkSaga(action) {
+  try {
+    const getBookmark = yield callGetBookmark(action.payload);
+    yield put({
+      type: 'SET_BOOKMARK',
+      payload: getBookmark,
+    });
+  } catch (error) {
+    yield put({
+      type: 'GET_BOOKMARK_REQUEST_FAILED',
+      message: error.data,
+    });
+  }
 }
 
 function* putProjectSaga(action) {
@@ -63,7 +94,7 @@ function* putProjectSaga(action) {
       });
     } catch (error) {
       yield put({
-        type: 'GET_REQUEST_FAILED',
+        type: 'PUT_PROJECT_REQUEST_FAILED',
         message: error.data,
       });
     }
@@ -77,7 +108,7 @@ function* delProjectSaga(action) {
     });
   } catch (error) {
     yield put({
-      type: 'GET_REQUEST_FAILED',
+      type: 'DEL_PROJECT_REQUEST_FAILED',
       message: error.data,
     });
   }

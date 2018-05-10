@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
 
-import UserMethods from '../UserMethods/UserMethods';
+import ProjectMethods from '../ProjectMethods/ProjectMethods';
 
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
@@ -59,7 +59,7 @@ class ProjectPage extends Component {
 
   render() {
     let content = null;
-    console.log('this is project', this.props.project.id);
+    console.log('this is project', this.props.match.params);
     
     if (this.props.user.userInfo) {
       content = (
@@ -82,7 +82,7 @@ class ProjectPage extends Component {
           </Grid>
           <Grid item xs={12}>
               List of methods
-              <UserMethods />
+              <ProjectMethods currentProject={this.props.match.params} />
           </Grid>
           </Grid>
         </div>

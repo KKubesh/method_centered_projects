@@ -27,7 +27,6 @@ class ProjectList extends Component {
     };
     
     render() { 
-        console.log(this.props.state.project);
         let projects = this.props.state.project.map(project => {
             return (
                 <ProjectItem key={project.id} project={project}/>
