@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import IconButton from 'material-ui/IconButton';
 import Dialog from 'material-ui/Dialog';
-import { Queue } from '@material-ui/icons';
+import { Queue, IndeterminateCheckBox } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
 
@@ -18,7 +18,7 @@ const styles = {
 }
 
 const mapStateToProps = state => ({
-    state
+    bookmark: state.bookmark
 });
 
 class ProjectMethodItem extends Component {
@@ -27,7 +27,8 @@ class ProjectMethodItem extends Component {
         open: false,
         bookmarkItem: {
             project_id: parseInt(this.props.currentProject.id),
-            method_id: this.props.method.id
+            method_id: this.props.method.id,
+            // bookmark_id: 
         }
     };
 
@@ -62,7 +63,23 @@ class ProjectMethodItem extends Component {
     }
     
     render() { 
-        
+        let methodItem = this.props.method.id
+        let bookmarkButton = null;
+        if (this.props.bookmark.find(function (val) {
+            console.log(val.method_id);
+            return (val.method_id === methodItem);                               
+            })
+        ) { 
+            bookmarkButton =
+                <IconButton>
+                    <IndeterminateCheckBox onClick={this.unbookmarkMethod}/>
+                </IconButton>
+        } else {
+            bookmarkButton =
+                <IconButton>
+                    <Queue onClick={this.bookmarkMethod}/>
+                </IconButton>
+        }
         return(
             <Grid item>
                 <Card style={styles.rootCard} title={this.props.method.title}>
@@ -70,12 +87,7 @@ class ProjectMethodItem extends Component {
                         title={this.props.method.title}
                         action={
                             <div>
-                                <IconButton>
-                                    <Queue onClick={this.bookmarkMethod}/>
-                                </IconButton>
-                                <IconButton>
-                                    <Queue onClick={this.unbookmarkMethod}/>
-                                </IconButton>
+                                {bookmarkButton}                            
                             </div>    
                         }
                     />

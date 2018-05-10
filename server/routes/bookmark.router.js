@@ -29,10 +29,11 @@ router.post('/', (req, res) => {
     })
 });
 
-router.delete('/:id', (req, res) => {
-    let id = req.params.id;
-    const queryText = `DELETE FROM project_methods WHERE method_id = $1;`
-    pool.query(queryText, [id])
+router.delete('/:method_id/:project_id', (req, res) => {
+    let methodId = req.params.method_id;
+    let projectId = req.params.project_id;
+    const queryText = `DELETE FROM project_methods WHERE method_id = $1 AND project_id = $2;`
+    pool.query(queryText, [methodId, projectId])
     .then(result => { res.send(result.rows); })
     .catch(err => {
         console.log('Error completing DEL methods in router', err);
