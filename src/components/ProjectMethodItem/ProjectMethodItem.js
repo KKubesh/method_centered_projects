@@ -47,9 +47,16 @@ class ProjectMethodItem extends Component {
         this.setState({open: false});
     };
 
-    bookMarkMethod = () => {
+    bookmarkMethod = () => {
         this.props.dispatch({
             type: 'POST_BOOKMARK',
+            payload: this.state.bookmarkItem
+        })
+    }
+
+    unbookmarkMethod = () => {
+        this.props.dispatch({
+            type: 'DEL_BOOKMARK',
             payload: this.state.bookmarkItem
         })
     }
@@ -62,9 +69,14 @@ class ProjectMethodItem extends Component {
                     <CardHeader 
                         title={this.props.method.title}
                         action={
-                            <IconButton>
-                                <Queue onClick={this.bookMarkMethod}/>
-                            </IconButton>
+                            <div>
+                                <IconButton>
+                                    <Queue onClick={this.bookmarkMethod}/>
+                                </IconButton>
+                                <IconButton>
+                                    <Queue onClick={this.unbookmarkMethod}/>
+                                </IconButton>
+                            </div>    
                         }
                     />
                     <CardMedia

@@ -17,3 +17,9 @@ export function callGetBookmark(action){
     .then(response => response.data)
     .catch(error => { throw error.reponse || error;});
 }
+// Bookmark DEL request
+export function callDelBookmark(action){
+    return axios.delete('/api/bookmark/'+ action.payload.method_id)
+    .then(response => response.data)
+    .catch(error => { throw error.reponse || error;});
+}
