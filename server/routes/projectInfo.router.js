@@ -10,7 +10,7 @@ router.get('/:id', (req, res) => {
     pool.query(queryText, [userId, projectId])
         .then(result => { res.send(result.rows); })
         .catch(err => {
-            console.log('Error completing GET projects/overview in router', err);
+            console.log('Error completing GET projects where id in router', err);
             res.sendStatus(500);
         });
 });
