@@ -27,6 +27,18 @@ router.post('/', (req, res) => {
         console.log('Error completeing bookmark per project', err);
         res.sendStatus(500);        
     })
+});
+
+router.delete('/:method_id/:project_id', (req, res) => {
+    let methodId = req.params.method_id;
+    let projectId = req.params.project_id;
+    const queryText = `DELETE FROM project_methods WHERE method_id = $1 AND project_id = $2;`
+    pool.query(queryText, [methodId, projectId])
+    .then(result => { res.send(result.rows); })
+    .catch(err => {
+        console.log('Error completing DEL methods in router', err);
+        res.sendStatus(500);
+    })
 })
 
 module.exports = router;

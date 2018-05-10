@@ -1,6 +1,6 @@
 import { takeEvery, put } from 'redux-saga/effects';
 import { callGetProject, callAddProject, callDelProject, callPutProject } from '../requests/projectRequest';
-import { callGetProjectInfo, callPostBookmark, callGetBookmark } from '../requests/projectInfoRequest';
+import { callGetProjectInfo, callPostBookmark, callGetBookmark, callDelBookmark } from '../requests/projectInfoRequest';
 
 function* projectSaga() {
   yield takeEvery('GET_PROJECT', getProjectSaga);
@@ -9,7 +9,8 @@ function* projectSaga() {
   yield takeEvery('PUT_PROJECT', putProjectSaga);
   yield takeEvery('PROJECT_INFO', getProjectInfoSaga);
   yield takeEvery('POST_BOOKMARK', postBookmarkSaga);
-  yield takeEvery('GET_BOOKMARK', getBookmarkSaga)
+  yield takeEvery('GET_BOOKMARK', getBookmarkSaga);
+  yield takeEvery('DEL_BOOKMARK', delBookmarkSaga);
 }
 // use as a general get for the user's projects
 function* getProjectSaga() {
@@ -44,7 +45,7 @@ function* getProjectInfoSaga(action) {
 
 function* postProjectSaga(action) {
   try {
-      const addProject = yield callAddProject(action);
+      yield callAddProject(action);
       yield put({
         type: 'GET_PROJECT',
       });
@@ -58,7 +59,7 @@ function* postProjectSaga(action) {
 
 function* postBookmarkSaga(action) {  
   try {
-      const addBookmark = yield callPostBookmark(action);
+      yield callPostBookmark(action);
       yield put({
         type: 'GET_BOOKMARK',
         payload: action.payload
@@ -86,6 +87,22 @@ function* getBookmarkSaga(action) {
   }
 }
 
+function* delBookmarkSaga(action) {
+  console.log('fired delbookmark');
+  try {
+    yield callDelBookmark(action);
+    yield put({
+      type: 'GET_BOOKMARK',
+      payload: action.payload      
+    });
+  } catch (error) {
+    yield put({
+      type: 'DEL_BOOKMARK_REQUEST_FAILED',
+      message: error.data,
+    });
+  }
+}
+
 function* putProjectSaga(action) {
   try {
       const putProject = yield callPutProject(action);
@@ -102,7 +119,7 @@ function* putProjectSaga(action) {
 
 function* delProjectSaga(action) {
   try {
-    const delProject = yield callDelProject(action);
+    yield callDelProject(action);
     yield put({
       type: 'GET_PROJECT',
     });

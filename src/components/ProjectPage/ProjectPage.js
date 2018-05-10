@@ -65,12 +65,12 @@ class ProjectPage extends Component {
       content = (
         <div>
           <Grid item xs={12} style={styles.root}>
-          <IconButton 
+          {/* <IconButton 
               style={{margin: '20px'}}
               color="secondary"
           >
               <ArrowBack />
-          </IconButton>
+          </IconButton> */}
           <Grid item xs={12}>
               <h1 id="welcome">
                 {this.props.project.project_title}
