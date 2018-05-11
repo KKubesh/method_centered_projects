@@ -20,10 +20,10 @@ class LoginDialog extends Component {
     render() {
         return (
             <div>
-                <Button label="Register" onClick={this.handleOpen}>Register</Button>
+                <Button variant="raised" color="primary" label="Register" onClick={this.handleOpen} style={{margin: '10px'}}>Register</Button>
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                <DialogTitle>Create account to manage your content.</DialogTitle>
-                <RegisterPage handleClose={this.handleClose}/>
+                <DialogTitle style={{width: '200px'}} >Create an account to manage your content.</DialogTitle>
+                <RegisterPage style={{width: '200px'}}  handleClose={this.handleClose}/>
                 </Dialog>
             </div>
         );
