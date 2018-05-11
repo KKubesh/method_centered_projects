@@ -17,16 +17,16 @@ import { createMuiTheme } from 'material-ui/styles';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
+      light: '#f49c61',
+      main: '#e1813f',
+      dark: '#d66317',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
+      light: '#828282',
+      main: '#737373',
+      dark: '#5e5e5e',
+      contrastText: '#fff',
     },
   },
 });

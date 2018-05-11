@@ -27,6 +27,7 @@ class MethodForm extends Component {
   newMethod = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'ADD_METHOD', payload: this.state })
+    this.props.handleClose();
   }
 
   handleChangeFor = propertyName => (event) => {

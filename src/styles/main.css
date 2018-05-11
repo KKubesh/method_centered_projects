@@ -99,6 +99,8 @@ li a:hover {
 
 h2, h1 {
     text-align: center;
+    color: #ef7c2aff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .titleMethod input {

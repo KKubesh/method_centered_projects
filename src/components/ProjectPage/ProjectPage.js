@@ -72,16 +72,15 @@ class ProjectPage extends Component {
               <ArrowBack />
           </IconButton> */}
           <Grid item xs={12}>
-              <h1 id="welcome">
-                {this.props.project.project_title}
-              </h1>
-              
+            <h1 id="welcome">
+              {this.props.project.project_title}
+            </h1>
           </Grid>
           <Grid item xs={12}>
-              <p>Long paragraph of explaination on Project and how to use page.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
           </Grid>
           <Grid item xs={12}>
-              List of methods
+              <h2>Methods</h2>
               <ProjectMethods currentProject={this.props.match.params} />
           </Grid>
           </Grid>

@@ -71,13 +71,13 @@ class ProjectMethodItem extends Component {
             })
         ) { 
             bookmarkButton =
-                <IconButton>
-                    <IndeterminateCheckBox onClick={this.unbookmarkMethod}/>
+                <IconButton onClick={this.unbookmarkMethod}>
+                    <IndeterminateCheckBox />
                 </IconButton>
         } else {
             bookmarkButton =
-                <IconButton>
-                    <Queue onClick={this.bookmarkMethod}/>
+                <IconButton onClick={this.bookmarkMethod}>
+                    <Queue />
                 </IconButton>
         }
         return(

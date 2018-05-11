@@ -158,6 +158,7 @@ class AdminMethodItem extends Component {
                         margin="normal"
                         fullWidth={true}
                         multiline={true}
+                        rows="7"
                         onBlur={this.handleChangeFor('steps')}
                     />
                 </Grid>
