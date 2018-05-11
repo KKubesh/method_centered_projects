@@ -12,6 +12,7 @@ const styles = {
     // dialog is prevent overlap when screen is scaled down
     dialogStyling: {
         minWidth: '300px',
+        maxWidth: '500px',
         margin: '30px',        
     },
     // root is meant to wrap all items
@@ -80,32 +81,40 @@ class AdminMethodItem extends Component {
         if (this.state.editingItem===true) {
             adminDialogContent =  
             <Grid style={styles.dialogStyling} container spacing={24}>
-                <Grid item xs={6}>
-                    <h2 className='titleMethod'>
-                    <TextField 
-                        id="title"
-                        type="search"
-                        defaultValue={this.props.method.title}
-                        margin="normal"
-                        onBlur={this.handleChangeFor('title')}
-                    />
-                    </h2>  
+                <Grid item xs={12}>
+                    <Grid item xs={6}>
+                        <h2 className='titleMethod'>
+                        <TextField 
+                            id="title"
+                            type="search"
+                            defaultValue={this.props.method.title}
+                            margin="normal"
+                            onBlur={this.handleChangeFor('title')}
+                        />
+                        </h2>
+                    </Grid>                        
                 </Grid>
-                <Grid item xs={6}>
-                    <div onClick={this.handleEdit}>* click text to edit</div>
+                <Grid item xs={12}>
+                    <p>
+                        * click text to edit 
                         <IconButton style={{margin: '20px'}}>
                             <DeleteForever onClick={this.delMethod}/>
                         </IconButton>
-                </Grid>
+                    </p>
+                </Grid>       
                 <Grid item xs={6}>
                     <img alt="method" height="250" width="250" src={this.props.method.image}/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid style={{alignItems: 'center', display: 'flex'}} item xs={6}>
                     <TextField 
                         id="statements"
                         type="search"
                         defaultValue={this.props.method.statements}
                         margin="normal"
+                        fullWidth={true}
+                        multiline={true}
+                        rowsMax="4"
+                        style={{height: '200px'}}
                         onBlur={this.handleChangeFor('statements')}
                     />
                 </Grid>
@@ -158,33 +167,34 @@ class AdminMethodItem extends Component {
                         margin="normal"
                         fullWidth={true}
                         multiline={true}
-                        rows="7"
+                        rowsMax="4"
                         onBlur={this.handleChangeFor('steps')}
                     />
                 </Grid>
-                <Button onClick={this.handleChangeFor}>Save</Button>
             </Grid>                
         }  else {
             adminDialogContent =
-                <Grid style={styles.dialogStyling} container spacing={24}>
-                    <Grid item xs={6}>
-                        <h2 onClick={this.handleEdit} 
-                            className='titleMethod'
-                        >
-                            {this.props.method.title}    
-                        </h2>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <div>* click text to edit</div>
-                            <IconButton style={{margin: '20px'}}>
-                                <DeleteForever onClick={this.delMethod}/>
-                            </IconButton>
-                        
+                <Grid style={styles.dialogStyling} container spacing={16}>
+                    <Grid item xs={12} style={{display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap'}}>
+                        <Grid item xs={12}>    
+                            <h1 onClick={this.handleEdit} 
+                                className='titleMethod'
+                            >
+                                {this.props.method.title}    
+                            </h1>
+                            <Grid item xs={12}>
+                                <p>* click text to edit
+                                <IconButton style={{margin: '20px'}}>
+                                    <DeleteForever onClick={this.delMethod}/>
+                                </IconButton>
+                                </p>
+                            </Grid>
+                        </Grid>
                     </Grid>
                     <Grid item xs={6}>
                         <img alt="method" height="250" width="250" src={this.props.method.image}/>
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid style={{alignItems: 'center', display: 'flex'}} item xs={6}>
                         <p onClick={this.handleEdit}>
                             {this.props.method.statements}
                         </p>
@@ -209,7 +219,6 @@ class AdminMethodItem extends Component {
                         <p style={{fontWeight: 'bold'}}>Steps</p>
                         <p onClick={this.handleEdit}>{this.props.method.steps}</p>
                     </Grid>
-                    <Button onClick={this.putMethod}>Save</Button>
                 </Grid>
         }
         return(
