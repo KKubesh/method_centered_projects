@@ -107,9 +107,7 @@ class ProjectMethodItem extends Component {
                         <Grid item xs={12}>
                             <h2>
                                 {this.props.method.title}
-                                <IconButton style={{margin: '20px'}}>
-                                    {bookmarkButton}
-                                </IconButton>   
+                                <span style={{padding: '20px'}}>{bookmarkButton}</span>
                             </h2>
                         </Grid>
                         <Grid item xs={6}>

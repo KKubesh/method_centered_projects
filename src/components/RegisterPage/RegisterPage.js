@@ -72,11 +72,11 @@ class RegisterPage extends Component {
 
   render() {
     return (
-        <div >
+        <div style={{ padding: '30px', justifyContent: 'center', display: 'flex' }}>
         {this.renderAlert()}
         <form onSubmit={this.registerUser}>
           <div>
-            <div>
+            <div style={{ justifyContent: 'space-around', display: 'flex'}}>
               <label htmlFor="username">
                 <TextField
                   type="text"
@@ -87,7 +87,7 @@ class RegisterPage extends Component {
                 />
               </label>
             </div>
-            <div>
+            <div style={{ justifyContent: 'space-around', display: 'flex'}}>
               <label htmlFor="password">
                 <TextField
                   type="password"
@@ -99,20 +99,26 @@ class RegisterPage extends Component {
               </label>
             </div>
           </div>
+          <div style={{height: '80px'}}>
+          </div>
           <div>
             <Button
+              variant="raised"
+              color="primary"
               type="submit"
               name="submit"
               label="Submit"
               onClick={this.props.handleClose}
-              style={{margin: '30px'}}
+              style={{margin: '10px'}}
             >
               Submit
             </Button>
             <Button
+              variant="raised"
+              color="secondary"
               label="Cancel"
               onClick={this.props.handleClose}
-              style={{margin: '30px'}}              
+              style={{margin: '10px'}}              
             >
               Cancel
             </Button>

@@ -133,3 +133,13 @@ input#title{
     color: #ef7c2aff;
     
 }
+
+.MuiPaper-root-126{
+    min-width: 280px;
+}
+
+h2.MuiTypography-root-159{
+    font-size: 24px;
+    color: #ef7c2aff;
+    line-height: 80px;
+}
