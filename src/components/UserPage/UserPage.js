@@ -72,12 +72,12 @@ class UserPage extends Component {
             <Button onClick={this.logout}>
               Log Out
             </Button>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <p style={{padding: '40px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
           </Grid>
           <Grid item xs={12}>
             <h2>Projects
-              <IconButton style={{margin: '20px'}}>
-                <CreateNewFolder onClick={this.handleOpen} />
+              <IconButton onClick={this.handleOpen} style={{margin: '20px'}}>
+                <CreateNewFolder />
               </IconButton>
               <Dialog open={this.state.open} onClose={this.handleClose}>
                 <DialogTitle>Create New Project</DialogTitle>

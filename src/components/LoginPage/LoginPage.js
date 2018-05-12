@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { triggerLogin, formError, clearError } from '../../redux/actions/loginActions';
 import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
 
 const mapStateToProps = state => ({
@@ -65,41 +66,49 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ padding: '30px', justifyContent: 'center', display: 'flex' }}>
         { this.renderAlert() }
         <form onSubmit={this.login}>
-          <div>
+          <div style={{ justifyContent: 'space-around', display: 'flex'}}>
             <label htmlFor="username">
-              Username:
-              <input
+              <TextField
                 type="text"
+                label="Username"
                 name="username"
                 value={this.state.username}
                 onChange={this.handleInputChangeFor('username')}
               />
             </label>
           </div>
-          <div>
+          <div style={{ justifyContent: 'space-around', display: 'flex'}}>
             <label htmlFor="password">
-              Password:
-              <input
+              <TextField
                 type="password"
+                label="Password"                  
                 name="password"
                 value={this.state.password}
                 onChange={this.handleInputChangeFor('password')}
               />
             </label>
           </div>
+          <div style={{height: '80px'}}>
+          </div>
           <div>
             <Button
+              variant="raised"
+              color="primary"
               type="submit"
               name="submit"
               label="Submit"
+              style={{margin: '10px'}}
             >
               Sign In
             </Button>
             <Button
+              variant="raised"
+              color="secondary"
               label="Cancel"
+              style={{margin: '10px'}}
               onClick={this.props.handleClose}
             >
               Cancel

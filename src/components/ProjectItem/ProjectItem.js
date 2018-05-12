@@ -49,11 +49,11 @@ class ProjectItem extends Component {
                     title={this.props.project.project_title}
                     action={
                         <div>
-                            <IconButton>
-                                <FolderOpen onClick={this.navProject}/>
+                            <IconButton onClick={this.navProject}>
+                                <FolderOpen />
                             </IconButton>
-                            <IconButton>
-                                <DeleteForever onClick={this.delProject}/>
+                            <IconButton onClick={this.delProject}>
+                                <DeleteForever />
                             </IconButton>
                         </div>
                     }
