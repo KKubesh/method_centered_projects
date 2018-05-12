@@ -1,9 +1,10 @@
 const express = require('express');
 const pool = require('../modules/pool');
+const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', rejectUnauthenticated, (req, res) => {
     let userId = req.user.id;   
     const queryText = 'SELECT * FROM project WHERE person_id = $1;';
     pool.query(queryText, [userId])
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
         });
 });
 
-router.post('/', (req, res) => {
+router.post('/', rejectUnauthenticated, (req, res) => {
     let p = req.body;
     const queryText = `INSERT INTO project (
         person_id,
@@ -43,7 +44,7 @@ router.post('/', (req, res) => {
 //         });
 // });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
     let id = req.params.id;
     const queryText = `DELETE FROM project WHERE id=$1`
     pool.query(queryText, [id])

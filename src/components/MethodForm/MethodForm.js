@@ -33,7 +33,7 @@ class MethodForm extends Component {
 
   showDemo = () => {
       this.setState({
-        title: 'Story board',
+        title: 'Storyboard',
         statements: 'A quick, low-resolution prototype, a Storyboard can help you visualize your concept from start to finish.',
         description: 'You don’t need to be a great artist to create a great Storyboard. By visually plotting out elements of your product or service, you can learn a lot about your idea. Not only will this method help you refine what your idea is, it can also reveal who will use it, where, and how. Like all prototypes, the idea here is to make something really rough as a way to help you think the idea through. It’s amazing what putting pen to paper can reveal.',
 	    time_amount: '660 Minutes',
@@ -53,12 +53,12 @@ class MethodForm extends Component {
 
   render() {
     return (
-        <Grid container item xs={12} style={{ padding: '30px', display:'flex'}}>
+        <Grid container style={{ padding: '30px', display:'flex', height: '400px'}}>
             <p style={{textAlign: 'right', color: 'white'}} onClick={this.showDemo}>*</p>
         
-            <form style={{minWidth: '500px'}} onSubmit={this.newMethod}>
-                <Grid item sx={12} style={{display: 'flex'}}>
-                    <Grid style={{padding: '10px'}}>
+            <form onSubmit={this.newMethod}>
+                <Grid item style={{display: 'flex'}}>
+                    <Grid  sm={6} sx={12} style={{padding: '10px'}}>
                         <div>
                             <TextField
                                 type="text"
@@ -100,7 +100,7 @@ class MethodForm extends Component {
                             />
                         </div>
                     </Grid>
-                    <Grid item xs={6} style={{padding: '10px'}}>
+                    <Grid item sm={6} xs={12} style={{padding: '10px'}}>
                         <div>
                             <TextField
                                 type="text"
