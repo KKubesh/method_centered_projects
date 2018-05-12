@@ -66,18 +66,17 @@ class ProjectMethodItem extends Component {
         let methodItem = this.props.method.id
         let bookmarkButton = null;
         if (this.props.bookmark.find(function (val) {
-            console.log(val.method_id);
             return (val.method_id === methodItem);                               
             })
         ) { 
             bookmarkButton =
-                <IconButton>
-                    <IndeterminateCheckBox onClick={this.unbookmarkMethod}/>
+                <IconButton onClick={this.unbookmarkMethod}>
+                    <IndeterminateCheckBox />
                 </IconButton>
         } else {
             bookmarkButton =
-                <IconButton>
-                    <Queue onClick={this.bookmarkMethod}/>
+                <IconButton onClick={this.bookmarkMethod}>
+                    <Queue />
                 </IconButton>
         }
         return(
@@ -109,7 +108,7 @@ class ProjectMethodItem extends Component {
                             <h2>
                                 {this.props.method.title}
                                 <IconButton style={{margin: '20px'}}>
-                                    <Queue />
+                                    {bookmarkButton}
                                 </IconButton>   
                             </h2>
                         </Grid>

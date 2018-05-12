@@ -16,9 +16,9 @@ body {
 form {
     align-content: center;
     height: 250px;
-    margin: 20px auto;
+    /* margin: 20px auto;
     padding: 25px;
-    border-radius: 2px;
+    border-radius: 2px; */
 }
 
 input {
@@ -99,6 +99,8 @@ li a:hover {
 
 h2, h1 {
     text-align: center;
+    color: #ef7c2aff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .titleMethod input {
@@ -109,7 +111,8 @@ h2, h1 {
 .titleMethod {
     font-size: 24px;
     text-align: left;
-    line-height: 70px;
+    color: #ef7c2aff;
+    line-height: 80px;
 }
 
 .paraText {
@@ -120,4 +123,13 @@ h2, h1 {
 
 input:focus{
     outline: none;
+}
+
+.formInputs{
+    padding: 60px, auto;
+}
+
+input#title{
+    color: #ef7c2aff;
+    
 }

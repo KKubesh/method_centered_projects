@@ -20,10 +20,10 @@ class LoginDialog extends Component {
     render() {
         return (
             <div>
-                <Button label="Sign In" onClick={this.handleOpen}>Sign In</Button>
+                <Button variant="raised" color="primary" label="Sign In" onClick={this.handleOpen} style={{margin: '10px', width: '105px'}}>Sign In</Button>
                 {/* dialog appears when open is true */}
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                    <DialogTitle> Sign in to manage your content.</DialogTitle>
+                    <DialogTitle><h2>Sign in</h2><h2>manage your content</h2></DialogTitle>
                     <LoginPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>

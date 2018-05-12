@@ -47,20 +47,24 @@ class AdminPage extends Component {
     if (this.props.user.userInfo) {
       content = (
         <div style={styles.root}>
-          <Grid item xs={12}>
-            <h1 id="welcome">
+          <Grid item xs={12} >
+            <h1 id="welcome" style={{textAlign: 'left'}}>
               Welcome, Admin!
             </h1>
-            <Button onClick={this.logout}>
-              Log Out
-            </Button>
           </Grid>
+          <div style={{padding: '40px'}}>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+          </div>
           <Grid item xs={12}>
-            <p>Long paragraph of explaination on how to use this stuff in the admin's page.</p>
-            <NewMethodDialog />
-          </Grid>
+              <div style={{ display: 'flex', padding: '20px', justifyContent: 'center'}}>
+                <Button variant="raised" color="secondary" style={{margin: '10px', width: '130px'}} onClick={this.logout}>
+                  Log Out
+                </Button>
+                <NewMethodDialog style={{margin: '10px'}} />
+              </div>
+            </Grid>
           <Grid item xs={12}>
-            List of methods
+            <h1>Methods</h1>
             <AdminMethods />
           </Grid>
         </div>

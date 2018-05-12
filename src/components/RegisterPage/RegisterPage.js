@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -71,30 +72,32 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+        <div >
         {this.renderAlert()}
         <form onSubmit={this.registerUser}>
           <div>
-            <label htmlFor="username">
-              Username:
-              <input
-                type="text"
-                name="username"
-                value={this.state.username}
-                onChange={this.handleInputChangeFor('username')}
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="password">
-              Password:
-              <input
-                type="password"
-                name="password"
-                value={this.state.password}
-                onChange={this.handleInputChangeFor('password')}
-              />
-            </label>
+            <div>
+              <label htmlFor="username">
+                <TextField
+                  type="text"
+                  label="Username"
+                  name="username"
+                  value={this.state.username}
+                  onChange={this.handleInputChangeFor('username')}
+                />
+              </label>
+            </div>
+            <div>
+              <label htmlFor="password">
+                <TextField
+                  type="password"
+                  label="Password"                  
+                  name="password"
+                  value={this.state.password}
+                  onChange={this.handleInputChangeFor('password')}
+                />
+              </label>
+            </div>
           </div>
           <div>
             <Button
@@ -102,12 +105,14 @@ class RegisterPage extends Component {
               name="submit"
               label="Submit"
               onClick={this.props.handleClose}
+              style={{margin: '30px'}}
             >
               Submit
             </Button>
             <Button
               label="Cancel"
               onClick={this.props.handleClose}
+              style={{margin: '30px'}}              
             >
               Cancel
             </Button>
