@@ -52,9 +52,9 @@ class AdminPage extends Component {
               Welcome, Admin!
             </h1>
           </Grid>
-          <Grid item xs={12} style={{padding: '40px'}}>
+          <div style={{padding: '40px'}}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
-          </Grid>
+          </div>
           <Grid item xs={12}>
               <div style={{ display: 'flex', padding: '20px', justifyContent: 'center'}}>
                 <Button variant="raised" color="secondary" style={{margin: '10px', width: '130px'}} onClick={this.logout}>

@@ -8,7 +8,6 @@ import Grid from 'material-ui/Grid';
 const styles = {
     dialogStyling: {
         minWidth: '300px',
-        maxWidth: '500px',
         padding: '30px',
     },
     root: {

@@ -66,7 +66,6 @@ class ProjectMethodItem extends Component {
         let methodItem = this.props.method.id
         let bookmarkButton = null;
         if (this.props.bookmark.find(function (val) {
-            console.log(val.method_id);
             return (val.method_id === methodItem);                               
             })
         ) { 
@@ -109,7 +108,7 @@ class ProjectMethodItem extends Component {
                             <h2>
                                 {this.props.method.title}
                                 <IconButton style={{margin: '20px'}}>
-                                    <Queue />
+                                    {bookmarkButton}
                                 </IconButton>   
                             </h2>
                         </Grid>
