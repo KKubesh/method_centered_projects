@@ -66,13 +66,19 @@ class UserPage extends Component {
       content = (
         <div style={styles.root}>
           <Grid item xs={12}>
-            <h1 id="welcome">
+            <h1 id="welcome" style={{textAlign: 'left'}}>
               Welcome, { this.props.user.userInfo.username }!
             </h1>
-            <Button onClick={this.logout}>
-              Log Out
-            </Button>
             <p style={{padding: '40px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <div style={{ display: 'flex', padding: '20px', justifyContent: 'center'}}>
+              <Button 
+              onClick={this.logout}
+              variant="raised"
+              color="secondary"
+              >
+                Log Out
+              </Button>
+            </div>
           </Grid>
           <Grid item xs={12}>
             <h2>Projects

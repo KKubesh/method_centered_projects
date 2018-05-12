@@ -72,7 +72,7 @@ class HomeMethodItem extends Component {
                         </Grid>
                         <Grid style={{alignItems: 'center', display: 'flex'}} item xs={6}>
                             <div >
-                            <p>{this.props.method.statements}</p>
+                                <p>{this.props.method.statements}</p>
                             </div>
                         </Grid>
                         <Grid item xs={6}>

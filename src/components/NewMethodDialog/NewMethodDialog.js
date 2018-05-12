@@ -23,7 +23,7 @@ class LoginDialog extends Component {
                 <Button variant="raised" color="primary" style={{margin: '10px'}} label="New Method" onClick={this.handleOpen}>New Method</Button>
                 {/* shows dialog below when open is true */}
                 <Dialog open={this.state.open} onClose={this.handleClose}>
-                <DialogTitle>Create New Method</DialogTitle>
+                <DialogTitle style={{color: '#ef7c2a'}}>Create New Method</DialogTitle>
                 <MethodForm handleClose={this.handleClose}/>
                 </Dialog>
             </div>

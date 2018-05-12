@@ -66,8 +66,10 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div style={{ padding: '30px', justifyContent: 'center', display: 'flex' }}>
-        { this.renderAlert() }
+      <div style={{ padding: '30px'}}>
+        <div style={{maxWidth: '200px'}}>
+          { this.renderAlert() }
+        </div>
         <form onSubmit={this.login}>
           <div style={{ justifyContent: 'space-around', display: 'flex'}}>
             <label htmlFor="username">
@@ -93,7 +95,7 @@ class LoginPage extends Component {
           </div>
           <div style={{height: '80px'}}>
           </div>
-          <div>
+          <div style={{ justifyContent: 'center', display: 'flex'}}>
             <Button
               variant="raised"
               color="primary"
