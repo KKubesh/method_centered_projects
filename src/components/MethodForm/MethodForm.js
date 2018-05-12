@@ -157,16 +157,24 @@ class MethodForm extends Component {
                         onChange={this.handleChangeFor('description')}
                     />
                 </div>
-                <div>
+                <div style={{height: '40px'}}>
+                </div>
+                <div style={{padding: '40px', justifyContent: 'center', display: 'flex'}}>
                     <Button
+                        variant="raised"
+                        color="primary"
                         type="submit"
                         name="submit"
+                        style={{margin: '10px'}}
                         label="Submit"
                     >
                         Submit
                     </Button>
                     <Button
+                        variant="raised"
+                        color="secondary"
                         label="Cancel"
+                        style={{margin: '10px'}}
                         onClick={this.props.handleClose}
                     >
                         Cancel

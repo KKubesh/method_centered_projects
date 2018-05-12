@@ -32,7 +32,7 @@ class ProjectForm extends Component {
 
   render() {
     return (
-        <div>
+        <div style={{ padding: '30px'}}>
             <form onSubmit={this.newMethod}>
                 <div style={{ justifyContent: 'space-around', display: 'flex'}}>
                     <TextField

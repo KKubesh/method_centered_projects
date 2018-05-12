@@ -71,7 +71,7 @@ class LoginPage extends Component {
           { this.renderAlert() }
         </div>
         <form onSubmit={this.login}>
-          <div style={{ justifyContent: 'space-around', display: 'flex'}}>
+          <div style={{ justifyContent: 'space-around', display: 'flex' }}>
             <label htmlFor="username">
               <TextField
                 type="text"
@@ -82,7 +82,7 @@ class LoginPage extends Component {
               />
             </label>
           </div>
-          <div style={{ justifyContent: 'space-around', display: 'flex'}}>
+          <div style={{ justifyContent: 'space-around', display: 'flex' }}>
             <label htmlFor="password">
               <TextField
                 type="password"
@@ -95,7 +95,7 @@ class LoginPage extends Component {
           </div>
           <div style={{height: '80px'}}>
           </div>
-          <div style={{ justifyContent: 'center', display: 'flex'}}>
+          <div style={{ justifyContent: 'center', display: 'flex' }}>
             <Button
               variant="raised"
               color="primary"
