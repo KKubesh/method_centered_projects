@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
 
 
 const mapStateToProps = state => ({
@@ -14,7 +15,7 @@ class ProjectForm extends Component {
     this.state = {
         project_title: '',
         description: '',
-        person_id: '',
+        person_id: this.props.state.user.userInfo.id,
     };
   }
 
@@ -33,44 +34,44 @@ class ProjectForm extends Component {
     return (
         <div>
             <form onSubmit={this.newMethod}>
-                <div>
-                    Project Title:
-                    <input
+                <div style={{ justifyContent: 'space-around', display: 'flex'}}>
+                    <TextField
                         type="text"
+                        label="Project Title"
                         name="project_title"
                         value={this.state.project_title}
                         onChange={this.handleChangeFor('project_title')}
                     />
                 </div>
-                <div>
-                    Description:
-                    <input
+                <div style={{ justifyContent: 'space-around', display: 'flex'}}>
+                    <TextField
                         type="text"
+                        label="Description"
                         name="description"
                         value={this.state.description}
                         onChange={this.handleChangeFor('description')}
                     />
                 </div>
-                <div>
-                    Project ID:
-                    <input
-                        type="text"
-                        name="person_id"
-                        value={this.state.person_id}
-                        onChange={this.handleChangeFor('person_id')}
-                    />
+                <div style={{height: '80px'}}>
                 </div>
                 <div>
                     <Button
+                        variant="raised"
+                        color="primary"
                         type="submit"
                         name="submit"
                         label="Submit"
+                        onClick={this.props.handleClose}
+                        style={{margin: '10px'}}
                     >
                         Submit
                     </Button>
                     <Button
+                        variant="raised"
+                        color="secondary"
                         label="Cancel"
                         onClick={this.props.handleClose}
+                        style={{margin: '10px'}}                        
                     >
                         Cancel
                     </Button>

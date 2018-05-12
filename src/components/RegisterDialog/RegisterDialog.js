@@ -26,7 +26,7 @@ class LoginDialog extends Component {
                 <DialogContentText style={{ justifyContent: 'center', display: 'flex'}}>
                     Manage your content.
                 </DialogContentText>
-                <RegisterPage style={{width: '200px'}}  handleClose={this.handleClose}/>
+                <RegisterPage handleClose={this.handleClose}/>
                 </Dialog>
             </div>
         );

@@ -38,7 +38,7 @@ class RegisterPage extends Component {
             this.props.history.push('/home');
           } else {
             this.setState({
-              message: 'Ooops! That didn\'t work. The username might already be taken. Try again!',
+              message: 'Sorry the username might already be taken. Try again!',
             });
           }
         })
@@ -72,8 +72,10 @@ class RegisterPage extends Component {
 
   render() {
     return (
-        <div style={{ padding: '30px', justifyContent: 'center', display: 'flex' }}>
-        {this.renderAlert()}
+        <div style={{ padding: '30px'}}>
+        <div style={{maxWidth: '200px'}}>
+          {this.renderAlert()}
+        </div>
         <form onSubmit={this.registerUser}>
           <div>
             <div style={{ justifyContent: 'space-around', display: 'flex'}}>
@@ -108,7 +110,6 @@ class RegisterPage extends Component {
               type="submit"
               name="submit"
               label="Submit"
-              onClick={this.props.handleClose}
               style={{margin: '10px'}}
             >
               Submit
