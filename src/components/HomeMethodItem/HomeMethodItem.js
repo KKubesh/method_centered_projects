@@ -4,6 +4,8 @@ import Dialog from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
+import MethodNotice from '../MethodNoticeDialog/MethodNoticeDialog';
+
 // addition styling may need adjustments
 const styles = {
     dialogStyling: {
@@ -40,9 +42,7 @@ class HomeMethodItem extends Component {
                         title={this.props.method.title}
                         // dialog propmting login for action below
                         action={
-                            <IconButton>
-                              <Queue />
-                            </IconButton>
+                            <MethodNotice /> 
                         }
                     />
                     <CardMedia
@@ -59,18 +59,16 @@ class HomeMethodItem extends Component {
                     style={styles.dialogStyling}
                 >
                     <Grid style={styles.dialogStyling} container spacing={16}>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} style={{display: 'flex'}}>
                             <h1>
                                 {this.props.method.title}
-                                <IconButton style={{margin: '20px'}}>
-                                    <Queue />
-                                </IconButton>   
                             </h1>
+                            <MethodNotice /> 
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={12}>
                             <img alt="method" height="250" width="250" src={this.props.method.image}/>
                         </Grid>
-                        <Grid style={{alignItems: 'center', display: 'flex'}} item xs={6}>
+                        <Grid style={{alignItems: 'center', display: 'flex', padding: '10px'}} item sm={6} xs={12}>
                             <div >
                                 <p>{this.props.method.statements}</p>
                             </div>

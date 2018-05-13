@@ -105,15 +105,15 @@ class ProjectMethodItem extends Component {
                 >
                     <Grid style={styles.dialogStyling} container spacing={24}>
                         <Grid item xs={12}>
-                            <h2>
+                            <h1 style={{textAlign: 'left', padding: '20px' }}>
                                 {this.props.method.title}
                                 <span style={{padding: '20px'}}>{bookmarkButton}</span>
-                            </h2>
+                            </h1>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={12}>
                             <img alt="method" height="250" width="250" src={this.props.method.image}/>
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item sm={6} xs={12} style={{alignItems: 'center', display: 'flex', padding: '5px'}}>
                             <p>{this.props.method.statements}</p>
                         </Grid>
                         <Grid item xs={6}>

@@ -69,23 +69,17 @@ class ProjectPage extends Component {
       content = (
         <div>
           <Grid item xs={12} style={styles.root}>
-          {/* <IconButton 
-              style={{margin: '20px'}}
-              color="secondary"
-          >
-              <ArrowBack />
-          </IconButton> */}
           <Grid item xs={12}>
-            <h1 id="welcome">
+            <h1 id="project_title" style={{textAlign: 'left'}}>
               {this.props.project.project_title}
             </h1>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{padding: '40px'}}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
           </Grid>
           <div>
             <Button
-              style={{ display: 'flex', justifyContent: 'center', margin: '10px'}}                
+              style={{ display: 'flex', justifyContent: 'center', margin: '20px 10px'}}  
               variant="raised"
               color="primary"
               onClick={this.backButton}
@@ -93,8 +87,8 @@ class ProjectPage extends Component {
               <ChevronLeft />
             </Button>
           </div>
-          <Grid item xs={12}>
-              <h2>Methods</h2>
+          <Grid item xs={12} >
+              <h1>Methods</h1>
               <ProjectMethods currentProject={this.props.match.params} />
           </Grid>
           </Grid>
