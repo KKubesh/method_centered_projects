@@ -19,7 +19,12 @@ class ProjectForm extends Component {
     };
   }
 
-  newMethod = (event) => {
+  submitClick = () => {
+    this.props.handleClose();
+    this.props.handleSnackClick();
+  }
+
+  newProject = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'ADD_PROJECT', payload: this.state })
   }
@@ -33,7 +38,7 @@ class ProjectForm extends Component {
   render() {
     return (
         <div style={{ padding: '30px' }}>
-            <form onSubmit={this.newMethod}>
+            <form onSubmit={this.newProject}>
                 <div style={{ justifyContent: 'space-around', display: 'flex'}}>
                     <TextField
                         type="text"
@@ -61,7 +66,7 @@ class ProjectForm extends Component {
                         type="submit"
                         name="submit"
                         label="Submit"
-                        onClick={this.props.handleClose}
+                        onClick={this.submitClick}
                         style={{margin: '10px'}}
                     >
                         Submit

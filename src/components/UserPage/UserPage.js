@@ -13,6 +13,7 @@ import IconButton from 'material-ui/IconButton';
 import { CreateNewFolder } from '@material-ui/icons';
 import Grid from 'material-ui/Grid';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
+import Snackbar from 'material-ui/Snackbar';
 
 
 const styles = {
@@ -24,6 +25,9 @@ const styles = {
       justify: 'center',
       alignItems: 'center',
       maxWidth: '960px',
+  },
+  snackBar: {
+    background: '#ef7c2a',
   }
 };
 
@@ -49,6 +53,9 @@ class UserPage extends Component {
 
   state = {
     open: false,
+    snackOpen: false,
+    vertical: null,
+    horizontal: null,
   };
 
   handleOpen = () => {
@@ -59,8 +66,17 @@ class UserPage extends Component {
     this.setState({open: false});
   };
 
+  handleSnackClick = message => () => {
+    this.setState({ snackOpen: true, ...message });
+  };
+
+  handleSnackClose = () => {
+    this.setState({ snackOpen: false });
+  };
+//this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })
   render() {
     let content = null;
+    const { vertical, horizontal, snackOpen } = this.state;
 
     if (this.props.user.userInfo) {
       content = (
@@ -87,7 +103,7 @@ class UserPage extends Component {
               </IconButton>
               <Dialog open={this.state.open} onClose={this.handleClose}>
                 <DialogTitle>Create New Project</DialogTitle>
-                <ProjectForm handleClose={this.handleClose}/>
+                <ProjectForm handleClose={this.handleClose} handleSnackClick={this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })}/>
               </Dialog> 
             </h2>
             <ProjectList />
@@ -105,6 +121,17 @@ class UserPage extends Component {
     return (
       <div>
         { content }
+        <div>
+        <Button onClick={this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })}>
+          Bottom-Center
+        </Button>
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={snackOpen}
+            onClose={this.handleSnackClose}
+            message={<span id="message-id">Project Added</span>}
+          />
+        </div>
       </div>
     );
   }
