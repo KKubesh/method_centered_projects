@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { USER_ACTIONS } from '../../redux/actions/userActions';
 import { triggerLogout } from '../../redux/actions/loginActions';
@@ -10,7 +11,7 @@ import ProjectForm from '../ProjectForm/ProjectForm';
 
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
-import { CreateNewFolder } from '@material-ui/icons';
+import { CreateNewFolder, ChevronLeft } from '@material-ui/icons';
 import Grid from 'material-ui/Grid';
 import Dialog, { DialogTitle } from 'material-ui/Dialog';
 import Snackbar from 'material-ui/Snackbar';
@@ -73,7 +74,7 @@ class UserPage extends Component {
   handleSnackClose = () => {
     this.setState({ snackOpen: false });
   };
-//this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })
+
   render() {
     let content = null;
     const { vertical, horizontal, snackOpen } = this.state;
@@ -86,18 +87,21 @@ class UserPage extends Component {
               Welcome, { this.props.user.userInfo.username }!
             </h1>
             <p style={{padding: '40px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
-            <div style={{ display: 'flex', padding: '20px', justifyContent: 'center'}}>
-              <Button 
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '10px'}}>
+              <div>
+              <Button
+              style={{ display: 'flex', justifyContent: 'center', margin: '10px', height: '40px'}}
               onClick={this.logout}
               variant="raised"
               color="secondary"
               >
                 Log Out
               </Button>
+              </div>
             </div>
           </Grid>
           <Grid item xs={12}>
-            <h2>Projects
+            <h1>Projects
               <IconButton onClick={this.handleOpen} style={{margin: '20px'}}>
                 <CreateNewFolder />
               </IconButton>
@@ -105,13 +109,13 @@ class UserPage extends Component {
                 <DialogTitle>Create New Project</DialogTitle>
                 <ProjectForm handleClose={this.handleClose} handleSnackClick={this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })}/>
               </Dialog> 
-            </h2>
+            </h1>
             <ProjectList />
           </Grid>
           <Grid item xs={12}>
           </Grid>
-          <Grid item xs={12}>
-            <h2>Methods</h2>
+          <Grid item xs={12} >
+            <h1 style={{padding: '50px', height: '0px'}}>Methods</h1>
             <UserMethods />
           </Grid>
         </div>
@@ -122,9 +126,6 @@ class UserPage extends Component {
       <div>
         { content }
         <div>
-        <Button onClick={this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })}>
-          Bottom-Center
-        </Button>
           <Snackbar
             anchorOrigin={{ vertical, horizontal }}
             open={snackOpen}
