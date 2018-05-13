@@ -70,7 +70,7 @@ class ProjectMethodItem extends Component {
             })
         ) { 
             bookmarkButton =
-                <IconButton onClick={this.unbookmarkMethod}>
+                <IconButton style={{backgroundColor: '#ffebdd', color: '#e1813f'}} onClick={this.unbookmarkMethod}>
                     <IndeterminateCheckBox />
                 </IconButton>
         } else {
