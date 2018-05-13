@@ -48,7 +48,7 @@ class AdminPage extends Component {
       content = (
         <div style={styles.root}>
           <Grid item xs={12} >
-            <h1 id="welcome" style={{textAlign: 'left'}}>
+            <h1 id="welcome_admin" style={{textAlign: 'left'}}>
               Welcome, Admin!
             </h1>
           </Grid>

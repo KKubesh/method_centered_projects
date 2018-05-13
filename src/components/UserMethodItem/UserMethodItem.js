@@ -55,19 +55,19 @@ class UserMethodItem extends Component {
                     onClose={this.handleClose}
                     style={styles.dialogStyling}
                 >
-                    <Grid style={styles.dialogStyling} container spacing={24}>
-                        <Grid item xs={12}>
-                            <h1>
+                    <Grid style={styles.dialogStyling} container spacing={16}>
+                        <Grid item xs={12} >
+                            <h1 style={{textAlign: 'left', padding: '20px'}}>
                                 {this.props.method.title}
                                 <IconButton style={{margin: '20px'}}>
                                     <Queue />
                                 </IconButton>   
                             </h1>
                         </Grid>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={12}>
                             <img alt="method" height="250" width="250" src={this.props.method.image}/>
                         </Grid>
-                        <Grid style={{alignItems: 'center', display: 'flex'}} item xs={6}>
+                        <Grid style={{alignItems: 'center', display: 'flex', padding: '5px'}} item sm={6} xs={12}>
                             <p>{this.props.method.statements}</p>
                         </Grid>
                         <Grid item xs={6}>
