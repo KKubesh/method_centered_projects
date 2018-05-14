@@ -92,7 +92,7 @@ class UserPage extends Component {
             <h1 id="welcome_user" style={{textAlign: 'left'}}>
               Welcome, { this.props.user.userInfo.username }!
             </h1>
-            <p style={{padding: '40px'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <p style={{padding: '40px'}}>Below are simple tools to get started. From the landing page you can see all of the methods note that the add feature can be clicked from this page to add to your project. You may add a new project and description. If you click into the project, more information will be displayed on how to manage your content. Note that all projects will hold their own bookmarks independently of one another.</p>
             <div style={{ display: 'flex', justifyContent: 'center', margin: '10px'}}>
               <div>
               <Button
