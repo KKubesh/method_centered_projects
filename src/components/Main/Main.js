@@ -25,7 +25,7 @@ class Main extends Component {
         return(
             <div style={styles.root}>
                 <div style={{padding: '40px'}}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+                    <p>Human Centered Design (HCD) is a framework to manage the design process by involving the human perspective during the problem solving process. There are a series of HCD methods which originate from IDEO.org Design Kit. This application was created to manage methods being used on a project basis. To find more information on IDEO.org Design Kit please visit <a href="http://www.designkit.org/">designkit.org</a>. Create an account to manage your projects and methods.</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-around', padding: '20px'}}>
                     {/* buttons below for dialogs */}

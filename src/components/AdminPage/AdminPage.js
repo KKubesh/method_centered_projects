@@ -53,7 +53,7 @@ class AdminPage extends Component {
             </h1>
           </Grid>
           <div style={{padding: '40px'}}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <p>Here you can manage all the content on the website that the user can see. You can add a new method through the form below. Note you can also edit the content if any corrections need to be made. If you need to removed a method you can click the trash can icon. Admin only has these privileges and will need to adjust account settings to allow for additional content editors.</p>
           </div>
           <Grid item xs={12}>
               <div style={{ display: 'flex', padding: '20px', justifyContent: 'center'}}>
