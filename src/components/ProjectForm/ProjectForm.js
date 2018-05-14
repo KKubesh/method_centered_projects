@@ -21,7 +21,7 @@ class ProjectForm extends Component {
 
   submitClick = () => {
     this.props.handleClose();
-    this.props.handleSnackClick();
+    this.props.handleAddProject();
   }
 
   newProject = (event) => {

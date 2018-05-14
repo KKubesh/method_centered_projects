@@ -38,7 +38,7 @@ class UserMethodItem extends Component {
                     <CardHeader 
                         title={this.props.method.title}
                         action={
-                            <UserMethodNotice methodItem={this.props.method}/>
+                            <UserMethodNotice handleAddMethod={this.props.handleAddMethod} methodItem={this.props.method}/>
                         }
                     />
                     <CardMedia
@@ -58,7 +58,7 @@ class UserMethodItem extends Component {
                         <Grid item xs={12} >
                             <h1 style={{textAlign: 'left', padding: '20px'}}>
                                 {this.props.method.title}
-                            <UserMethodNotice style={{margin: '20px'}} methodItem={this.props.method}/>                                   
+                            <UserMethodNotice handleAddMethod={this.props.handleAddMethod} style={{margin: '20px'}} methodItem={this.props.method}/>                                   
                             </h1>
                         </Grid>
                         <Grid item sm={6} xs={12}>

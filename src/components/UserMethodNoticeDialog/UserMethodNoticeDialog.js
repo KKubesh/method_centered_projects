@@ -50,6 +50,7 @@ class UserMethodNotice extends Component {
             type: 'POST_BOOKMARK',
             payload: this.state.bookmarkItem
         })
+        this.props.handleAddMethod();
         this.handleClose();
     }
 
