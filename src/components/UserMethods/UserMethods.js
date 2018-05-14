@@ -23,7 +23,6 @@ class UserMethods extends Component {
     }
 
     render() {
-        console.log(this.props.state.method);
         let methods = this.props.state.method.map(method => {
             return (
                 <UserMethodItem key={method.id} method={method}/>

@@ -3,8 +3,6 @@ import Dialog, { DialogTitle, DialogContentText } from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import IconButton from 'material-ui/IconButton';
 import Button from 'material-ui/Button';
-import LoginDialog from '../LoginDialog/LoginDialog';
-import RegisterDialog from '../RegisterDialog/RegisterDialog';
 
 class MethodNotice extends Component {
     // dialog status established
