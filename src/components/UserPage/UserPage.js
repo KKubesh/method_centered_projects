@@ -54,7 +54,8 @@ class UserPage extends Component {
 
   state = {
     open: false,
-    snackOpen: false,
+    addProject: false,
+    addMethod: false,
     vertical: null,
     horizontal: null,
   };
@@ -67,17 +68,22 @@ class UserPage extends Component {
     this.setState({open: false});
   };
 
-  handleSnackClick = message => () => {
-    this.setState({ snackOpen: true, ...message });
+  handleAddProject = message => () => {
+    this.setState({ addProject: true, ...message });
+  };
+
+  handleAddMethod = message => () => {
+    this.setState({ addMethod: true, ...message });
   };
 
   handleSnackClose = () => {
-    this.setState({ snackOpen: false });
+    this.setState({ addProject: false });
+    this.setState({ addMethod: false });
   };
 
   render() {
     let content = null;
-    const { vertical, horizontal, snackOpen } = this.state;
+    const { vertical, horizontal, addProject, addMethod } = this.state;
 
     if (this.props.user.userInfo) {
       content = (
@@ -107,7 +113,7 @@ class UserPage extends Component {
               </IconButton>
               <Dialog open={this.state.open} onClose={this.handleClose}>
                 <DialogTitle>Create New Project</DialogTitle>
-                <ProjectForm handleClose={this.handleClose} handleSnackClick={this.handleSnackClick({ vertical: 'bottom', horizontal: 'center' })}/>
+                <ProjectForm handleClose={this.handleClose} handleAddProject={this.handleAddProject({ vertical: 'bottom', horizontal: 'center' })}/>
               </Dialog> 
             </h1>
             <ProjectList />
@@ -116,7 +122,7 @@ class UserPage extends Component {
           </Grid>
           <Grid item xs={12} >
             <h1 style={{padding: '50px', height: '0px'}}>Methods</h1>
-            <UserMethods />
+            <UserMethods handleAddMethod={this.handleAddMethod({ vertical: 'bottom', horizontal: 'center' })}/>
           </Grid>
         </div>
       );
@@ -128,9 +134,17 @@ class UserPage extends Component {
         <div>
           <Snackbar
             anchorOrigin={{ vertical, horizontal }}
-            open={snackOpen}
+            open={addProject}
             onClose={this.handleSnackClose}
             message={<span id="message-id">Project Added</span>}
+          />
+        </div>
+        <div>
+          <Snackbar
+            anchorOrigin={{ vertical, horizontal }}
+            open={addMethod}
+            onClose={this.handleSnackClose}
+            message={<span id="message-id">Method Added</span>}
           />
         </div>
       </div>
