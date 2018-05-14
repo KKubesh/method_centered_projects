@@ -4,6 +4,7 @@ import Dialog from 'material-ui/Dialog';
 import { Queue } from '@material-ui/icons';
 import Card, { CardMedia, CardHeader } from 'material-ui/Card';
 import Grid from 'material-ui/Grid';
+import UserMethodNotice from '../UserMethodNoticeDialog/UserMethodNoticeDialog';
 
 const styles = {
     dialogStyling: {
@@ -37,9 +38,7 @@ class UserMethodItem extends Component {
                     <CardHeader 
                         title={this.props.method.title}
                         action={
-                            <IconButton>
-                                <Queue />
-                            </IconButton>
+                            <UserMethodNotice method={this.props.method}/>
                         }
                     />
                     <CardMedia
@@ -59,9 +58,7 @@ class UserMethodItem extends Component {
                         <Grid item xs={12} >
                             <h1 style={{textAlign: 'left', padding: '20px'}}>
                                 {this.props.method.title}
-                                <IconButton style={{margin: '20px'}}>
-                                    <Queue />
-                                </IconButton>   
+                            <UserMethodNotice style={{margin: '20px'}} title={this.props.method}/>                                   
                             </h1>
                         </Grid>
                         <Grid item sm={6} xs={12}>
