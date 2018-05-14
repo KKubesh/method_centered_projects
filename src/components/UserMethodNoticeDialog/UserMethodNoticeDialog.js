@@ -22,7 +22,7 @@ class UserMethodNotice extends Component {
         open: false,
         bookmarkItem: {
             project_id: null,
-            // method_id: this.props.method.id,
+            method_id: null,
         }
     };
     // dialog status change
@@ -38,9 +38,10 @@ class UserMethodNotice extends Component {
         this.setState({
             bookmarkItem: {
                 [name]: event.target.value,
+                method_id: this.props.methodItem.id
             }
         });
-        console.log(this.props.method.id);
+        console.log(this.props.methodItem.id);
         console.log(this.state.bookmarkItem.project_id);        
     };
 
@@ -49,6 +50,7 @@ class UserMethodNotice extends Component {
             type: 'POST_BOOKMARK',
             payload: this.state.bookmarkItem
         })
+        this.handleClose();
     }
 
     render() {
@@ -62,7 +64,7 @@ class UserMethodNotice extends Component {
                 <Dialog open={this.state.open} onClose={this.handleClose} className="signIn" >
                     <DialogTitle>Adding a Method</DialogTitle>
                     <DialogContentText style={{ justifyContent: 'center', padding: '30px', maxWidth: '300px' }}>
-                        {/* You selected to add the method <strong>{this.props.method.title}</strong>. Please select a project. */}
+                        You selected to add the method <strong>{this.props.methodItem.title}</strong>. Please select a project.
                         <TextField
                             style={{  display: 'flex' }}
                             id="select-project"
