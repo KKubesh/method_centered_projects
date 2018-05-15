@@ -40,6 +40,7 @@ class UserMethodItem extends Component {
                         action={
                             <UserMethodNotice handleAddMethod={this.props.handleAddMethod} methodItem={this.props.method}/>
                         }
+                        style={{maxWidth: '220px'}}
                     />
                     <CardMedia
                         style={{height: '290px', width: '290px'}}
