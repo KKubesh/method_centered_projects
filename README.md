@@ -7,7 +7,15 @@ Method Centered Projects is currently in the beginning phase. This application w
 
 * Admin side of the application allows of adding, editing, and removing the method content to the user interface as needed.
 
+<img src="documentation/images/Admin_Side.gif" width ="800px" alt=".gif of admin page">
+(Admin Functionality)
+
 * User side of the application allows for the user to add and remove projects. From the projects the user can add and revmoved the methods they will be using on the project.
+
+<img src="documentation/images/Project_Navigation.gif" width ="800px" alt=".gif of project navigation">
+(Project Page Functionality)
+<img src="documentation/images/Add_Methods_Projects.gif" width ="800px" alt=".gif of adding methods to projects">
+(Adding Methods Functionality)
 
 ## The Problem
 
@@ -26,14 +34,9 @@ Each page is meant to serve as funnel to draw the user in before asking them to 
 The application is design to be reactive making web and mobile friendly.
 
 ## Additional Views
+
 <img src="documentation/images/Sign_In.gif" width ="800px" alt=".gif of signing in">
 (Sign-In Functionality)
-<img src="documentation/images/Project_Navigation.gif" width ="800px" alt=".gif of project navigation">
-(Project Page Functionality)
-<img src="documentation/images/Adding_Methods_Projects.gif" width ="800px" alt=".gif of adding methods to projects">
-(Adding Methods Functionality)
-<img src="documentation/images/Admin_Side.gif" width ="800px" alt=".gif of admin page">
-(Adding Methods Functionality)
 
 ## Technologies Used
 
