@@ -1,5 +1,7 @@
 # Method Centered Projects Application
 
+![Landing Page](https://github.com/kkubesh/method_centered_projects/src/styles/images/Landing_Page.gif) 
+
 Method Centered Projects is currently in the beginning phase. This application was built to serve the purpose of managing Methods from [The Field Guide for Human Centered Design Methods](http://www.designkit.org/resources/1) by [IDEO.org](https://www.ideo.org). The application has two primary user roles Admin and User.
 
 * Admin side of the application allows of adding, editing, and removing the method content to the user interface as needed.
