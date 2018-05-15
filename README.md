@@ -1,6 +1,7 @@
 # Method Centered Projects Application
 
 <img src="documentation/images/Landing_Page.gif" width ="800px" alt=".gif of landing page">
+(Landing Page Functionality)
 
 Method Centered Projects is currently in the beginning phase. This application was built to serve the purpose of managing Methods from [The Field Guide for Human Centered Design Methods](http://www.designkit.org/resources/1) by [IDEO.org](https://www.ideo.org). The application has two primary user roles Admin and User.
 
@@ -23,6 +24,16 @@ The project is meant for designers therefore design had a high priority in the f
 Each page is meant to serve as funnel to draw the user in before asking them to commit to creating an account. Once the user logs in functionality is introduced page by page.
 
 The application is design to be reactive making web and mobile friendly.
+
+## Additional Views
+<img src="documentation/images/Sign_In.gif" width ="800px" alt=".gif of signing in">
+(Sign-In Functionality)
+<img src="documentation/images/Project_Navigation.gif" width ="800px" alt=".gif of project navigation">
+(Project Page Functionality)
+<img src="documentation/images/Adding_Methods_Projects.gif" width ="800px" alt=".gif of adding methods to projects">
+(Adding Methods Functionality)
+<img src="documentation/images/Admin_Side.gif" width ="800px" alt=".gif of admin page">
+(Adding Methods Functionality)
 
 ## Technologies Used
 
