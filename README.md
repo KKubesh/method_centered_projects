@@ -1,6 +1,6 @@
 # Method Centered Projects Application
 
-Method Centered Projects is currently in the beginning phase. This application was built to serve the purpose of managing Methods from [The Field Guide for Human Centered Design Methods](https:www.designkit.org/) by [IDEO.org](https://www.ideo.org). The application has two primary user roles Admin and User.
+Method Centered Projects is currently in the beginning phase. This application was built to serve the purpose of managing Methods from [The Field Guide for Human Centered Design Methods](http://www.designkit.org/resources/1) by [IDEO.org](https://www.ideo.org). The application has two primary user roles Admin and User.
 
 * Admin side of the application allows of adding, editing, and removing the method content to the user interface as needed.
 
@@ -21,3 +21,85 @@ The project is meant for designers therefore design had a high priority in the f
 Each page is meant to serve as funnel to draw the user in before asking them to commit to creating an account. Once the user logs in functionality is introduced page by page.
 
 The application is design to be reactive making web and mobile friendly.
+
+## Technologies Used
+
+React.js
+Material-UI
+Node.js
+Express
+PostgreSQL
+Passport
+
+## Future Updates to Inlcude:
+
+* Steps as List Items
+* User Favorites Tab
+* User Method Documentation and Insights
+* User Export of Documentation and Insights
+* User's Submit Personal HCD Methodologies
+
+## Getting Started
+
+### Required
+Node.js
+PostgreSQL Database
+
+### SQL
+```
+CREATE TABLE person (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR (80) UNIQUE NOT NULL,
+    password VARCHAR (1000) NOT NULL
+);
+
+CREATE TABLE method (
+	id SERIAL PRIMARY KEY,
+	title varchar(40) NOT NULL,
+	statements varchar(700) NOT NULL,
+	description varchar(3000) NOT NULL,
+	time_amount varchar(60) NOT NULL,
+	diffculty varchar(20) NOT NULL,
+	need varchar(80) NOT NULL,
+	participants varchar(100) NOT NULL,
+	steps varchar(3000) NOT NULL,
+	image varchar(200) NOT NULL
+);
+
+CREATE TABLE favorites (
+	id SERIAL PRIMARY KEY,
+	methods INT NOT NULL,
+	person_id INT NOT NULL,
+);
+
+CREATE TABLE project_methods (
+	id SERIAL PRIMARY KEY,
+	method_id INT NOT NULL,
+	project_id INT NOT NULL
+);
+
+CREATE TABLE project (
+	id SERIAL PRIMARY KEY,
+	person_id INT NOT NULL,
+	project_title VARCHAR(240) NOT NULL,
+	description VARCHAR(3000) NOT NULL
+);
+```
+
+### Commands to Run
+* npm install
+* npm run server
+* npm run client
+
+## Authors
+#### Kam Kubesh
+
+## What Did I Learn
+* First project created in React
+* Material UI 
+    * Dialogs
+    * Snackbar
+    * Grids
+    * Themes
+* Intergrating similar components without losing consistency
+* Navigation based on user generated items
