@@ -44,6 +44,7 @@ class HomeMethodItem extends Component {
                         action={
                             <MethodNotice /> 
                         }
+                        style={{maxWidth: '220px'}}
                     />
                     <CardMedia
                         style={{height: '290px', width: '290px'}}

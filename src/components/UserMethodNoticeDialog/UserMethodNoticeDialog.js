@@ -21,8 +21,8 @@ class UserMethodNotice extends Component {
     state = {
         open: false,
         bookmarkItem: {
-            project_id: null,
-            method_id: null,
+            project_id: '',
+            method_id: '',
         }
     };
     // dialog status change
